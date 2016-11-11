@@ -272,6 +272,8 @@
 <script src="/js/holder.js"></script>
 <script src="/js/index.js"></script>
 
+@yield('scripts')
+
 </body>
 
 </html>

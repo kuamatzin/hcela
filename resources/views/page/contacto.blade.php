@@ -9,19 +9,25 @@
         <div class="col-md-8">
             <section>
                 <p>¿Tienes dudas o requieres más información acerca de nuestros produtos?. No dudes en contactarnos</p>
+                
+                @include('flash::message')
 
-                <form role="form">
-                    <div class="form-group">
-                        <label for="InputName">Nombre</label>
-                        <input type="email" class="form-control" id="InputName">
+                <form role="form" action="/enviar_email" method="GET">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        {!! Form::label('name', 'Nombre') !!}
+                        {!! Form::text('name', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                        <small class="text-danger">{{ $errors->first('name') }}</small>
                     </div>
-                    <div class="form-group">
-                        <label for="InputEmail1">Email</label>
-                        <input type="email" class="form-control" id="InputEmail1">
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        {!! Form::label('email', 'Email') !!}
+                        {!! Form::email('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'eg: carlos@gmail.com']) !!}
+                        <small class="text-danger">{{ $errors->first('email') }}</small>
                     </div>
-                    <div class="form-group">
-                        <label for="InputMessage">Mensaje</label>
-                        <textarea class="form-control" id="InputMessage" rows="8"></textarea>
+                    <div class="form-group{{ $errors->has('message') ? ' has-error' : '' }}">
+                        {!! Form::label('message', 'Mensaje') !!}
+                        {!! Form::textarea('message', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                        <small class="text-danger">{{ $errors->first('message') }}</small>
                     </div>
                     <button type="submit" class="btn btn-ar btn-primary">Enviar</button>
                     <div class="clearfix"></div>
@@ -65,5 +71,7 @@
 @endsection
 
 @section('scripts')
-
+<script>
+$('div.alert').not('.alert-important').delay(5000).fadeOut(350);
+</script>
 @endsection

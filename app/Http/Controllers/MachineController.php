@@ -73,4 +73,11 @@ class MachineController extends Controller
             return [];
         }
     }
+
+    public function edit($id)
+    {
+        $machine = Machine::findOrFail($id);
+
+        return view('machines.edit', compact('machine'));
+    }
 }
