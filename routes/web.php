@@ -24,7 +24,7 @@ Route::get('/enviar_email', function (Request $request) {
         ]);
 
         if ($validator->fails()) {
-            return redirect('/contacto')
+            return redirect('/')
                         ->withErrors($validator)
                         ->withInput();
         }
@@ -34,7 +34,7 @@ Route::get('/enviar_email', function (Request $request) {
 
         flash('Enseguida nos pondremos en contacto con ustedes', 'success');
 
-        return redirect('/contacto');
+        return redirect('/');
 });
 
 Route::resource('catalogo', 'MachineController');
