@@ -1,4 +1,4 @@
-<section id="projects2" class="projects-section section text-center">
+<section id="projects2" class="projects-section section text-center" style=" background: #e2f2ff;">
     <div class="container">
         <h2 class="section-title">Herramientas, refacciones y accesorios</h2>
         <div class="latest-projects">

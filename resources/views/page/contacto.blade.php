@@ -27,6 +27,27 @@
                         <small class="text-danger">{{ $errors->first('name') }}</small>
                     </div>
                 </div>
+                <div class="name-group col-sm-6 col-xs-12 form-group">
+                    <div class="form-group{{ $errors->has('nombre_comercial') ? ' has-error' : '' }}">
+                        {!! Form::label('nombre_comercial', 'Nombre Comercial') !!}
+                        {!! Form::text('nombre_comercial', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                        <small class="text-danger">{{ $errors->first('nombre_comercial') }}</small>
+                    </div>
+                </div>
+                <div class="name-group col-sm-6 col-xs-12 form-group">
+                    <div class="form-group{{ $errors->has('estado') ? ' has-error' : '' }}">
+                        {!! Form::label('estado', 'Estado') !!}
+                        {!! Form::text('estado', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                        <small class="text-danger">{{ $errors->first('estado') }}</small>
+                    </div>
+                </div>
+                <div class="name-group col-sm-6 col-xs-12 form-group">
+                    <div class="form-group{{ $errors->has('ciudad') ? ' has-error' : '' }}">
+                        {!! Form::label('ciudad', 'Ciudad') !!}
+                        {!! Form::text('ciudad', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                        <small class="text-danger">{{ $errors->first('ciudad') }}</small>
+                    </div>
+                </div>
                 <div class="email-group col-sm-6 col-xs-12 form-group">
                     <div class="form-group-inner{{ $errors->has('email') ? ' has-error' : '' }}">
                         {!! Form::label('email', 'Email') !!}
