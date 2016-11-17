@@ -59,7 +59,7 @@
                 <div class="item col-sm-4 col-xs-12">
                     <div class="item-inner">
                         <div class="project-item">
-                            <div class="img-holder img-holder-1"></div>
+                            <div class="img-holder img-holder-4"></div>
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Lijadoras de Banda</h4>
@@ -76,7 +76,7 @@
                 <div class="item col-sm-4 col-xs-12">
                     <div class="item-inner">
                         <div class="project-item">
-                            <div class="img-holder img-holder-2"></div>
+                            <div class="img-holder img-holder-5"></div>
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Tornos</h4>
@@ -93,7 +93,7 @@
                 <div class="item col-sm-4 col-xs-12">
                     <div class="item-inner">
                         <div class="project-item">
-                            <div class="img-holder img-holder-3"></div>
+                            <div class="img-holder img-holder-6"></div>
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Escoplos</h4>
@@ -112,7 +112,7 @@
                 <div class="item col-sm-4 col-xs-12 col-sm-offset-4">
                     <div class="item-inner">
                         <div class="project-item">
-                            <div class="img-holder img-holder-1"></div>
+                            <div class="img-holder img-holder-7"></div>
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Sierras Cinta</h4>
