@@ -1,16 +1,11 @@
-
-// Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-
-// Variables
-@import "variables";
-
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
 // Sweer Alert
 @import "node_modules/sweetalert/dist/sweetalert";
 
-.titulo {
-    font-size: 22px
+$blue-theme: #2566B4;
+
+.li-link {
+    &:hover {
+        color: $blue-theme;
+    }
+    cursor: pointer;
 }

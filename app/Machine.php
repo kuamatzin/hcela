@@ -85,4 +85,13 @@ class Machine extends Model
                 break;
         }
     }
+
+    public function getVideoAttribute($video)
+    {
+        return preg_replace(
+            "/\s*[a-zA-Z\/\/:\.]*youtu(be.com\/watch\?v=|.be\/)([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i",
+            "https://www.youtube.com/embed/$2",
+            $video
+        );
+    }
 }

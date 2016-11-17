@@ -4,17 +4,9 @@ use HerramientasCela\Mail\ContactoMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
-Route::get('/', function () {
-    return view('page.index',  ['activo' => 'home']);
-});
+Route::get('/', 'PageController@index');
 
-Route::get('/quienes_somos', function () {
-    return view('page.quienes_somos',  ['activo' => 'quienes_somos']);
-});
-
-Route::get('/contacto', function () {
-    return view('page.contacto', ['activo' => 'contacto']);
-});
+Route::post('processPayment', 'PaymentController@processPayment');
 
 Route::get('/enviar_email', function (Request $request) {
     $validator = Validator::make($request->all(), [

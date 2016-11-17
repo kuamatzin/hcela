@@ -25,6 +25,8 @@
     
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="/css/styles.css">
+    <!-- Custom CSS -->
+    <link id="theme-style" rel="stylesheet" href="/css/app.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -134,6 +136,9 @@
     <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
     <script src="/js/demo/style-switcher.js"></script>
     <script src="/js/app.js"></script>
+    <script type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.2/js/conekta.js"></script>
+
+    @yield('scripts')
 
     
 </body>

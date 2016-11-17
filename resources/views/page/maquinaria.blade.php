@@ -10,9 +10,11 @@
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Sierras Escuadradoras</h4>
-                                    <div class="desc">Project intro goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor...</div>
-                                    <a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#project-modal-1">View Details</a>
-                                    <a class="link" href="#" data-toggle="modal" data-target="#project-modal-1"></a>
+                                    <ul class="list-group">
+                                        @foreach($escuadradoras as $key => $escuadradora)
+                                        <li class="list-group-item li-link">{{$escuadradora->name}}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -25,9 +27,11 @@
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Sierras Circulares</h4>
-                                    <div class="desc">Project intro goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor...</div>
-                                    <a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#project-modal-2">View Details</a>
-                                    <a class="link" href="#" data-toggle="modal" data-target="#project-modal-2"></a>
+                                    <ul class="list-group">
+                                        @foreach($circulares as $key => $circular)
+                                        <li class="list-group-item li-link">{{$circular->name}}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -40,9 +44,11 @@
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Trompos y Routers</h4>
-                                    <div class="desc">Project intro goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor...</div>
-                                    <a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#project-modal-3">View Details</a>
-                                    <a class="link" href="#" data-toggle="modal" data-target="#project-modal-3"></a>
+                                    <ul class="list-group">
+                                        @foreach($trompos as $key => $trompo)
+                                        <li class="list-group-item li-link">{{$trompo->name}}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -57,9 +63,11 @@
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Lijadoras de Banda</h4>
-                                    <div class="desc">Project intro goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor...</div>
-                                    <a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#project-modal-1">View Details</a>
-                                    <a class="link" href="#" data-toggle="modal" data-target="#project-modal-1"></a>
+                                    <ul class="list-group">
+                                        @foreach($lijadoras as $key => $lijadora)
+                                        <li class="list-group-item li-link">{{$lijadora->name}}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -72,9 +80,11 @@
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Tornos</h4>
-                                    <div class="desc">Project intro goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor...</div>
-                                    <a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#project-modal-2">View Details</a>
-                                    <a class="link" href="#" data-toggle="modal" data-target="#project-modal-2"></a>
+                                    <ul class="list-group">
+                                        @foreach($tornos as $key => $torno)
+                                        <li class="list-group-item li-link">{{$torno->name}}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -87,9 +97,11 @@
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Escoplos</h4>
-                                    <div class="desc">Project intro goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor...</div>
-                                    <a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#project-modal-3">View Details</a>
-                                    <a class="link" href="#" data-toggle="modal" data-target="#project-modal-3"></a>
+                                    <ul class="list-group">
+                                        @foreach($escoplos as $key => $escoplo)
+                                        <li class="list-group-item li-link">{{$escoplo->name}}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -104,9 +116,11 @@
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Sierras Cinta</h4>
-                                    <div class="desc">Project intro goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor...</div>
-                                    <a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#project-modal-1">View Details</a>
-                                    <a class="link" href="#" data-toggle="modal" data-target="#project-modal-1"></a>
+                                    <ul class="list-group">
+                                        @foreach($cintas as $key => $cinta)
+                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$cinta}})">{{$cinta->name}}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>

@@ -1,15 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" id="crear-maquina">
+    <div class="container" id="editar-maquina">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title titulo">Crear Máquina</h3>
+                    <h3 class="panel-title titulo">Editar Máquina</h3>
                 </div>
+                {{$machine->characteris}}
                 <div class="panel-body">
-                    {!! Form::model($machine, ['url' => ['catalogo.update', $machine->id]]) !!}
-                        @include('machines.form', ['submitButtonText' => 'Guardar'])
+                    {!! Form::model($machine, ['route' => ['catalogo.update', $machine->id], 'method' => 'PUT']) !!}
+                        @include('machines.form_edit', ['submitButtonText' => 'Guardar'])
                     {!! Form::close() !!}
                 </div>
             </div>
@@ -20,10 +21,29 @@
 @section('scripts')
 <script>
     new Vue({
-        el: '#crear-maquina',
+        el: '#editar-maquina',
         data: {
             caracteristicas: [],
+            especificaciones_server: [],
             especificaciones: [],
+        },
+        ready: function(){
+            this.caracteristicas = JSON.parse(this.caracteristicas)
+            this.especificaciones_server = JSON.parse(this.especificaciones_server)
+            
+            for (var nombre in this.especificaciones_server) {
+                if (this.especificaciones_server.hasOwnProperty(nombre)) {
+                    var especificaciones_a = [];
+                    var nombreCategoria = nombre;
+                    var numero_especificaciones = 0;
+                    for(var data in this.especificaciones_server[String(nombre)]){
+                        especificaciones_a.push(this.especificaciones_server[String(nombre)][data])
+                        numero_especificaciones = numero_especificaciones + 1;
+                    }
+                    var data = { nombre: nombreCategoria, especificaciones: especificaciones_a, numero_especificaciones: 0 }
+                    this.especificaciones.push(data)
+                }
+            }
         },
         methods: {
             agregar_especificacion: function(){

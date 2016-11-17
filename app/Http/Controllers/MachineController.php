@@ -28,6 +28,7 @@ class MachineController extends Controller
 
     public function store(MachineRequest $request)
     {
+        dd($request->all());
         $request = $this->prepareData($request);
         Machine::create($request->all());
 
@@ -79,5 +80,10 @@ class MachineController extends Controller
         $machine = Machine::findOrFail($id);
 
         return view('machines.edit', compact('machine'));
+    }
+
+    public function update($id)
+    {
+        dd("HOLA");
     }
 }
