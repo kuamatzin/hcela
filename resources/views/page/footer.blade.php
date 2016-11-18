@@ -4,7 +4,7 @@
             <div class="footer-col business-hours-col col-md-4 col-sm-6 col-xs-12">
                 <h3 class="col-title">Horario de atención</h3>
                 <ul class="business-hours-list list-unstyled">
-                    <li><strong>Lunes - Viernes:</strong> 9am - 7pm</li>
+                    <li><strong>Lunes - Viernes:</strong> 9am - 5:30pm</li>
                     <li><strong>Sábado:</strong> 9am - 2pm</li>
                     <li><strong>Domingo:</strong> Cerrado</li>
                 </ul>
@@ -20,7 +20,6 @@
                     </li>
                     <li class="item">
                         <span class="custom-icon icon-email"></span>
-                        <span class="info"><a href="#">contacto@herramientascela.com</a></span>
                     </li>
                     <li class="item">
                         <span class="custom-icon icon-map_pin"></span>

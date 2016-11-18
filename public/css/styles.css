@@ -809,18 +809,12 @@ h1.logo img {
   height: 360px;
 }
 .projects-section .img-holder-1 {
-  background: url('../img/presentacion/escuadradora.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('../img/presentacion/escuadradora.png') no-repeat;
+  background-size: 100%;
 }
 .projects-section .img-holder-2 {
-  background: url('../img/presentacion/circular.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('../img/presentacion/circular.png') no-repeat;
+  background-size: 100%;
 }
 .projects-section .img-holder-3 {
   background: url('../img/presentacion/trompo.png') no-repeat center center;
@@ -830,74 +824,47 @@ h1.logo img {
   background-size: cover;
 }
 .projects-section .img-holder-4 {
-  background: url('../img/presentacion/trompo.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('../img/presentacion/lijadora.png') no-repeat;
+  background-size: 100%;
 }
 .projects-section .img-holder-5 {
-  background: url('../img/presentacion/lijadora.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('../img/presentacion/torno.png') no-repeat;
+  background-size: 100%;
 }
 .projects-section .img-holder-6 {
-  background: url('../img/presentacion/torno.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('../img/presentacion/escoplo.png') no-repeat;
+  background-size: 100%;
 }
 .projects-section .img-holder-7 {
-  background: url('../img/presentacion/escoplo.png') no-repeat center center;
+  background: url('../img/presentacion/cinta.png') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 .projects-section .img-holder-8 {
-  background: url('../img/presentacion/mandril.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('../img/presentacion/mandril.png') no-repeat;
+  background-size: 100%;
 }
 .projects-section .img-holder-9 {
-  background: url('../img/presentacion/trompo_modulador.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('../img/presentacion/trompo_modulador.png') no-repeat;
+  background-size: 100% 100%;
 }
 .projects-section .img-holder-10 {
-  background: url('../img/presentacion/tornillo.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('../img/presentacion/tornillo.png') no-repeat;
+  background-size: 100%;
 }
 .projects-section .img-holder-11 {
-  background: url('../img/presentacion/husillo.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('../img/presentacion/husillo.png') no-repeat;
+  background-size: 100%;
 }
 .projects-section .img-holder-12 {
-  background: url('../img/presentacion/sargento.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('../img/presentacion/sargento.png') no-repeat;
+  background-size: 100%;
 }
 .projects-section .img-holder-13 {
-  background: url('../img/presentacion/escoplo.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('../img/presentacion/escoplo.png') no-repeat;
+  background-size: 100%;
 }
 .latest-projects {
   margin-bottom: 60px;

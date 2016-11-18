@@ -95,16 +95,16 @@
             </div><!--//container-->
         </div><!--//topbar-->
         <div class="branding container">    
-            <h1 class="logo pull-left"><img id="logo-image" class="logo-image" src="/img/logo.png" height="60px" alt=""></h1> 
+            <h1 class="logo pull-left"><img id="logo-image" class="logo-image" src="/img/logo.png" height="80px" alt=""></h1> 
             <ul class="header-info-list list-inline pull-right">
                 <li class="info-item contact-methods">
                     <span class="custom-icon icon-telephone_signal"></span>
                     <span class="info-main phone-number"><a href="#">2222812544 </a></span>
-                    <span class="info-sub"><a href="#">contacto@herramientascela.com</a></span>
+                    <span class="info-sub"><a href="#">Lunes - Sábado</a></span>
                 </li><!--//info-item-->
                 <li class="info-item business-hours">
                     <span class="custom-icon icon-clock"></span>
-                    <span class="info-main phone-number">9am - 7pm</span>
+                    <span class="info-main phone-number">9am - 5:30pm</span>
                     <span class="info-sub">Lunes - Viernes</span>
                 </li><!--//info-item-->
             </ul><!--//info-list-->

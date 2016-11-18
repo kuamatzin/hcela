@@ -8,7 +8,7 @@
                     <i class="custom-icon fa fa-history" aria-hidden="true"></i>
                     <h3 class="item-title">Historia</h3>
                     <div class="item-desc">
-                        <p>HERRAMIENTAS CELA, es una empresa 100% mexicana, fundada en 1990. Se inicio como fabricante de herramientas, mas poco tiempo después se introdujo en la fabricación de maquinaria para madera, destacándose en este ultimo como una empresa innovadora a nivel nacional.</p>
+                        <p>HERRAMIENTAS CELA, es una empresa 100% mexicana, fundada en 1990. Se inició como fabricante de herramientas, mas poco tiempo después se introdujo en la fabricación de maquinaria para madera, destacándose en este ultimo como una empresa innovadora a nivel nacional.</p>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                     <i class="custom-icon fa fa-star" aria-hidden="true"></i>
                     <h3 class="item-title">Garantía</h3>
                     <div class="item-desc">
-                        <p>Todos nuestros productos cuentan con 1 año de garantía sobre defectos de fabricación, pero le podemos decir que nuestra mejor garantía es que usted no la necesitara.</p>
+                        <p>Todos nuestros productos cuentan con 1 año de garantía sobre defectos de fabricación, pero le podemos decir que nuestra mejor garantía es que usted no la necesitará.</p>
                     </div>
                 </div>
             </div>

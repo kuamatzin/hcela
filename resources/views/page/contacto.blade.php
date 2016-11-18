@@ -14,7 +14,6 @@
             </li>
             <li class="item">
                 <span class="custom-icon icon-email"></span>
-                <span class="info"><a href="#">contacto@herramientascela.com</a></span>
             </li>
         </ul>
         <form  class="contact-form form" method="get" action="/enviar_email">
