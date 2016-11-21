@@ -12,21 +12,21 @@ Route::get('/enviar_email', function (Request $request) {
     $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
-            'message' => 'required'
+            'message' => 'required',
+            'corp_name' => 'required',
+            'state' => 'required',
+            'city' => 'required',
+            'phone' => 'required'
         ]);
 
         if ($validator->fails()) {
-            return redirect('/')
-                        ->withErrors($validator)
-                        ->withInput();
+            return $validator->getMessageBag()->toArray();
         }
 
         
         Mail::to($request->email)->send(new ContactoMail($request->all()));
 
-        flash('Enseguida nos pondremos en contacto con ustedes', 'success');
-
-        return redirect('/');
+        return "Exito";
 });
 
 Route::resource('catalogo', 'MachineController');

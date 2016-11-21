@@ -25,7 +25,15 @@
         el: "body",
         data: {
             active_machine: '',
-            pago: false
+            pago: false,
+            errors: '',
+            name: '',
+            email: '',
+            message: '',
+            corp_name: '',
+            state: '',
+            city: '',
+            phone: ''
         },
         methods: {
             setActiveMachine: function(maquina){
@@ -83,6 +91,27 @@
 
                 /* Tokenizar una tarjeta en Conekta */
                 Conekta.token.create(tokenParams, successResponseHandler, errorResponseHandler);
+            },
+            contacto: function(){
+                console.log("HOAL")
+                var that = this;
+                this.$http.get('/enviar_email/?name=' + this.name + '&corp_name=' + this.corp_name + '&state=' + this.state + '&city=' + this.city + '&email=' + this.email + '&phone=' + this.phone + '&message=' + this.message).then(function(response){
+                    if (response.body == 'Exito') {
+                        swal("Enseguida nos pondremos en contacto contigo")
+                        that.name = ''
+                        that.corp_name = ''
+                        that.state = ''
+                        that.city = ''
+                        that.email = ''
+                        that.phone = ''
+                        that.message = ''
+                    }
+                    else {
+                        that.errors = JSON.parse(response.body);
+                    }
+                }, function(error){
+
+                })
             }
         }
     })
