@@ -137,9 +137,10 @@
     <script src="/js/demo/style-switcher.js"></script>
     <script src="/js/app.js"></script>
     <script type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.2/js/conekta.js"></script>
-
+    <!--Add the following script at the bottom of the web page (immediately before the </body> tag)-->
+    <script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatinline.aspx?hccid=69227704"></script>
     @yield('scripts')
-
+    
     
 </body>
 </html> 
