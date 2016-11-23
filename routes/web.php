@@ -23,7 +23,6 @@ Route::get('/enviar_email', function (Request $request) {
             return $validator->getMessageBag()->toArray();
         }
 
-        
         Mail::to($request->email)->send(new ContactoMail($request->all()));
 
         return "Exito";

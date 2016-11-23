@@ -33,12 +33,26 @@
             corp_name: '',
             state: '',
             city: '',
-            phone: ''
+            phone: '',
+            //Card Validation
+            valid_card: false,
+            brand_card: '',
+            card_number: '',
+            card_name: '',
+            card_cvc: '',
+            card_expYear: '',
+            card_expMonth: '',
+            boton_pagar: true,
+            boton_procesando_pago: false
         },
         methods: {
             setActiveMachine: function(maquina){
                 this.active_machine = maquina;
                 $('#especificaciones').modal('show');
+            },
+            validarTarjeta: function(){
+                this.valid_card = Conekta.card.validateNumber(this.card_number);
+                this.brand_card = Conekta.card.getBrand(this.card_number);
             },
             paymentConekta: function(){
                 var that = this;
@@ -46,11 +60,11 @@
                 var errorResponseHandler, successResponseHandler, tokenParams;
                 tokenParams = {
                   "card": {
-                    "number": "4242424242424242",
-                    "name": "Javier Pedreiro",
-                    "exp_year": "2017",
-                    "exp_month": "12",
-                    "cvc": "123",
+                    "number": this.card_number,
+                    "name": this.card_name,
+                    "exp_year": this.card_expYear,
+                    "exp_month": this.card_expMonth,
+                    "cvc": this.card_cvc,
                     "address": {
                         "street1": "Calle 123 Int 404",
                         "street2": "Col. Condesa",
@@ -63,24 +77,28 @@
                 };
                 /* Después de tener una respuesta exitosa, envía la información al servidor */
                 successResponseHandler = function(token) {
-                    console.log(token)
                     // POST /someUrl
-                    that.$http.post('/processPayment', {token: token.id, product: that.active_machine.id, buyer_name: 'Javier Pedreiro', buyer_email: 'kuamatzin@gmail.com'}).then((response) => {
-
-                        // get status
-                        response.status;
-
-                        // get status text
-                        response.statusText;
-
-                        // get 'Expires' header
-                        response.headers.get('Expires');
-
-                        // set data on vm
-                        that.$set('someData', response.body);
-
+                    that.$http.post('/processPayment', {token: token.id, product: that.active_machine.id, buyer_name: that.card_name, buyer_email: 'kuamatzin@gmail.com'}, {before : function(){
+                        that.boton_pagar = false;
+                        that.boton_procesando_pago = true;
+                    }}).then((response) => {
+                        that.boton_pagar = true;
+                        that.boton_procesando_pago = false;
+                        if (response.status == 400) {
+                            swal(response.data.status);
+                            sweetAlert("Oops...", response.data.status, "error");
+                        }
+                        else {
+                            that.card_name = ''
+                            that.card_number = ''
+                            that.card_expMonth = ''
+                            that.card_expYear = ''
+                            that.card_cvc = ''
+                            that.valid_card = false
+                            swal("Perfecto!", "¡Pago procesado con éxito!", "success")
+                        }
                     }, (response) => {
-                        // error callback
+                        
                     });
                 };
 

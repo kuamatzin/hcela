@@ -42,10 +42,10 @@
                             <div v-if="!pago">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Características</a></li>
-                                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Especificaciones</a></li>
-                                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Video</a></li>
-                                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Manual</a></li>
+                                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" style="color:black">Características</a></li>
+                                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" style="color:black">Especificaciones</a></li>
+                                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab" style="color:black">Video</a></li>
+                                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab" style="color:black">Manual</a></li>
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content">
@@ -88,13 +88,23 @@
                                                         </h3>
                                                     </div>
                                                     <div class="panel-body">
-                                                        <form role="form">
+                                                        <form role="form" v-on:submit.prevent="paymentConekta">
+                                                            <div class="form-group">
+                                                                <label for="cardNumber">
+                                                                    NOMBRE EN TARJETA</label>
+                                                                <div class="">
+                                                                    <input type="text" class="form-control" id="cardName" placeholder="Nombre en Tarjeta"
+                                                                    required autofocus v-model="card_name"/>
+                                                                </div>
+                                                            </div>
                                                             <div class="form-group">
                                                                 <label for="cardNumber">
                                                                     NÚMERO DE TARJETA</label>
                                                                 <div class="input-group">
                                                                     <input type="text" class="form-control" id="cardNumber" placeholder="Número de Tarjeta Válido"
-                                                                    required autofocus />
+                                                                    required autofocus v-model="card_number" v-on:keyup="validarTarjeta"/>
+                                                                    <span class="input-group-addon" v-show="!valid_card"><span class="glyphicon glyphicon-ok"></span></span>
+                                                                    <span class="input-group-addon alert-success" v-show="valid_card"><span class="glyphicon glyphicon-ok" style="color:green"></span></span>
                                                                     <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                                                                 </div>
                                                             </div>
@@ -104,24 +114,25 @@
                                                                         <label for="expityMonth">
                                                                         FECHA DE EXPIRACIÓN</label>
                                                                         <div class="col-xs-6 col-lg-6 pl-ziro">
-                                                                            <input type="text" class="form-control" id="expityMonth" placeholder="MM" required />
+                                                                            <input type="text" class="form-control" id="expityMonth" placeholder="MM" required v-model="card_expMonth"/>
                                                                         </div>
                                                                         <div class="col-xs-6 col-lg-6 pl-ziro">
-                                                                            <input type="text" class="form-control" id="expityYear" placeholder="YY" required /></div>
+                                                                            <input type="text" class="form-control" id="expityYear" placeholder="YY" required v-model="card_expYear"/></div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-xs-5 col-md-5 pull-right">
                                                                         <div class="form-group">
                                                                             <label for="cvCode">
                                                                             CVC</label>
-                                                                            <input type="password" class="form-control" id="cvCode" placeholder="CVC" required />
+                                                                            <input type="password" class="form-control" id="cvCode" placeholder="CVC" required v-model="card_cvc"/>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <button class="btn btn-success btn-lg btn-block" role="button" v-show="boton_pagar">Pagar</button>
+                                                                <a class="btn btn-success btn-lg btn-block" role="button" v-show="boton_procesando_pago"><img src="http://www.techspot.com/images/loading_blue2.gif" class="img-responsive center-block"></a>
                                                             </form>
                                                         </div>
                                                     </div>
-                                                <a class="btn btn-success btn-lg btn-block" role="button" v-on:click="paymentConekta">Pagar</a>
                                             </div>
                                         </div>
                                     </div>

@@ -27,18 +27,18 @@ class PaymentController extends Controller
                 'phone' => '2225630362',
                 'line_items'=> array(
                   array(
-                    'name'=> 'Box of Cohiba S1s',
-                    'description'=> 'Imported From Mex.',
-                    'unit_price'=> 20000,
+                    'name'=> $product->name,
+                    'description'=> $product->name,
+                    'unit_price'=> 30000,
                     'quantity'=> 1
                   )
                 )
               )
             ));
         } catch (Conekta_Error $e) {
-            dd($e->message_to_purchaser);
+            return response()->json(['status' => $e->message_to_purchaser], 400);
         }
 
-        dd($charge);
+        return response()->json(['status' => $charge->status], 200);
     }
 }
