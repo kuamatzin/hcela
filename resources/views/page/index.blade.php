@@ -111,7 +111,6 @@
                 Conekta.token.create(tokenParams, successResponseHandler, errorResponseHandler);
             },
             contacto: function(){
-                console.log("HOAL")
                 var that = this;
                 this.$http.get('/enviar_email/?name=' + this.name + '&corp_name=' + this.corp_name + '&state=' + this.state + '&city=' + this.city + '&email=' + this.email + '&phone=' + this.phone + '&message=' + this.message).then(function(response){
                     if (response.body == 'Exito') {
