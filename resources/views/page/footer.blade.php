@@ -18,9 +18,7 @@
                         <br>
                         <span class="info"><a href="#">222 326 03 27</a></span>
                     </li>
-                    <li class="item">
-                        <span class="custom-icon icon-email"></span>
-                    </li>
+
                     <li class="item">
                         <span class="custom-icon icon-map_pin"></span>
                         <span class="info">
