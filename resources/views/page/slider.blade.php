@@ -13,8 +13,8 @@
                 <div class="item-content container text-center">
                     <div class="item-content-inner">
                         
-                        <h1 class="heading" style="font-size: 70px">Herramientas Cela</h1>
-                        <p class="intro">Las herramientas más sofistificadas y de mejor calidad para la carpintería</p>
+                        <h1 class="heading" style="font-size: 70px; color:black">Herramientas Cela</h1>
+                        <p class="intro" style="color:black">Las herramientas más sofistificadas y de mejor calidad para la carpintería</p>
                         <a class="btn btn-primary btn-cta scrollto" href="#contact" target="_blank">Contáctanos</a>
                         
                     </div>
