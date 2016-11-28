@@ -24,6 +24,8 @@ class CreateMachinesTable extends Migration
             $table->string('user_guide');
             $table->integer('type');
             $table->integer('machine_type');
+            $table->integer('sellable');
+            $table->integer('price');
             $table->timestamps();
         });
     }
