@@ -83,6 +83,6 @@ class MachineController extends Controller
 
     public function update($id)
     {
-        dd("HOLA");
+
     }
 }
