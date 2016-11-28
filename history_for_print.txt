@@ -1,0 +1,322 @@
+    1  clear
+    2  ls
+    3  desktop
+    4  clear
+    5  ls
+    6  documents
+    7  clear
+    8  ls
+    9  cd ..
+   10  ls
+   11  cd Downloads
+   12  ls
+   13  „clear
+   14  clear
+   15  cd ..
+   16  cd Documents
+   17  ls
+   18  cd Stacks/Proyectos/sima
+   19  clear
+   20  ls
+   21  sublime .
+   22  clear
+   23  ls
+   24  cd ..
+   25  ls
+   26  clear
+   27  cd herramientas
+   28  clear
+   29  git add .
+   30  git commit -m "detalles de herramientas"
+   31  clear
+   32  git push
+   33  clear
+   34  ssh carcua3@deltacar.mx
+   35  clear
+   36  ssh carcua3@deltacar.mx
+   37  sublime .
+   38  touch ~/.hushlogin
+   39  clear
+   40  cd Documents/Stacks/Proyectos
+   41  ls
+   42  cd apuestas
+   43  cd ..
+   44  clear
+   45  bower
+   46  clear
+   47  crew
+   48  cd ..
+   49  brew
+   50  brew list
+   51  clear
+   52  cd Documents/Stacks/Proyectos/sima
+   53  git
+   54  clear
+   55  git
+   56  clear
+   57  cd Documents/Stacks/Proyectos/pokepizzas
+   58  clear
+   59  yarn update
+   60  yarn upgrade
+   61  mysql.server start
+   62  clear
+   63  cd ..
+   64  cd sima
+   65  clear
+   66  git add .
+   67  git commit -m "Cuadro comparativo arreglar problema de ivas"
+   68  git push
+   69  clear
+   70  mysql.server start
+   71  clear
+   72  cd Documents/Stacks/Proyectos/contratos
+   73  valet share
+   74  clear
+   75  valet share
+   76  clear
+   77  cd Documents/Stacks/Proyectos/contratos
+   78  valet share
+   79  cd Documents/Stacks/Proyectos/contratos
+   80  clear
+   81  valet restart
+   82  valet share
+   83  clear
+   84  cd ..
+   85  clear
+   86  cd herramientas
+   87  ls
+   88  usbkdp .
+   89  clear
+   90  sublime .
+   91  clear
+   92  git status
+   93  clear
+   94  gti add .
+   95  git commit -m "Imagenes de herramientas"
+   96  clear
+   97  git push
+   98  clear
+   99  git status
+  100  git add .
+  101  git commit -m "Herramientas imagenes"
+  102  git push
+  103  clear
+  104  ssh carcua3@deltacar.mx
+  105  pwd
+  106  cd Documents/Stacks/Proyectos/herramientas
+  107  clear
+  108  git status
+  109  clear
+  110  git add .
+  111  git commit -m "Mas campos en formulario de contacto"
+  112  clear
+  113  git push
+  114  cd Documents/Stacks/Proyectos/herramientas
+  115  sublime .
+  116  mysql.server start
+  117  clear
+  118  git add .
+  119  git commit -m "Cambios de interfaz"
+  120  clear
+  121  git push
+  122  clear
+  123  ssh carcua3@deltacar.mx
+  124  cd ..
+  125  cd sima
+  126  clear
+  127  git add .
+  128  git commit -m "Quitar algo malo"
+  129  git push
+  130  clear
+  131  clea
+  132  clear
+  133  cd code
+  134  clear
+  135  cd Documents/Stacks/Proyectos/herramientas
+  136  mysql.server start
+  137  git status
+  138  clear
+  139  sublime .
+  140  clear
+  141  git status
+  142  clear
+  143  git status
+  144  clear
+  145  git add .
+  146  git commit -m "Contacto form via ajax"
+  147  git push
+  148  clear
+  149  ls
+  150  ssh carcua3@deltacar.mx
+  151  mysql.server start
+  152  clear
+  153  cd Documents/Stacks/Proyectos/
+  154  clear
+  155  cd herramientas
+  156  sublime .
+  157  clear
+  158  git status
+  159  clear
+  160  git status
+  161  git add .
+  162  git commit -m "Chat"
+  163  clear
+  164  git push
+  165  ssh carcua3@deltacar.mx
+  166  cd Documents/Stacks/Proyectos/herramientas
+  167  clear
+  168  ls
+  169  ping hcela.inovuz.com
+  170  clear
+  171  ssh carcua3@deltacar.mxmL9EJn
+  172  ssh carcua3@deltacar.mx
+  173  clear
+  174  exit
+  175  cd Documents/Stacks/Proyectos/herramientas
+  176  sublime .
+  177  ssh carcua3@deltacar.mx
+  178  clear
+  179  sublime .
+  180  cd Documents/Stacks/Proyectos/herramientas
+  181  clear
+  182  git status
+  183  git add .
+  184  git commit -m "Pago Conekta"
+  185  clear
+  186  git push
+  187  clear
+  188  git status
+  189  clear
+  190  git status
+  191  clear
+  192  git add .
+  193  git commit -m "Pequeños cambios"
+  194  git push
+  195  clear
+  196  ssh carcua3@deltacar.mx
+  197  clear
+  198  git add .
+  199  git commit -m "Datos de correo agregados en backend"
+  200  clear
+  201  git push
+  202  clear
+  203  ssh carcua3@deltacar.mx
+  204  clear
+  205  pwd
+  206  clear
+  207  exit
+  208  cd Documents/Stacks/Proyectos/contador
+  209  sublime .
+  210  clear
+  211  wich zshconfig
+  212  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  213  wich zshconfig
+  214  clear
+  215  sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+  216  clear
+  217  cat .zshrc
+  218  clear
+  219  zshconfig
+  220  sublime .zshrc
+  221  clear
+  222  touch .aliases
+  223  ls -la
+  224  sublime .aliases
+  225  clear
+  226  cd /home
+  227  ls
+  228  cd ..
+  229  cd /Users/carloscuamatzin/Documents/Stacks/Proyectos
+  230  cd ..
+  231  mycode
+  232  clear
+  233  mycode
+  234  clear
+  235  gs
+  236  sublime.
+  237  cd ..
+  238  sublime .aliases
+  239  zshconfig
+  240  sublime .zshrc
+  241  zshconfig
+  242  mycode
+  243  gs
+  244  clear
+  245  gs
+  246  mycode
+  247  clear
+  248  gs
+  249  clear
+  250  php artisan migrate
+  251  cd herramientas
+  252  clear
+  253  php artisan
+  254  mycode
+  255  cd herramientas
+  256  clear
+  257  art
+  258  clear
+  259  art
+  260  art:m
+  261  mysql.server start
+  262  art:m
+  263  clear
+  264  ls
+  265  gs
+  266  clear
+  267  gp
+  268  clear
+  269  eval $(ssh-agent)
+  270  ssh-add
+  271  clear
+  272  gp
+  273  clear
+  274  mycode
+  275  clear
+  276  ls
+  277  cd apuestas
+  278  cd resources/clear
+  279  clear
+  280  cd ..
+  281  ls
+  282  clear
+  283  ls
+  284  clear
+  285  mycode
+  286  clear
+  287  ls
+  288  clear
+  289  ls
+  290  cd code
+  291  cd mycode
+  292  cd code
+  293  clear
+  294  ls
+  295  sublime .aliases
+  296  clear
+  297  mycode
+  298  cd herramientas
+  299  sublime .
+  300  clear
+  301  art
+  302  art m:r
+  303  mysql.server start
+  304  clear
+  305  art migrate:refresh
+  306  clear
+  307  gaa
+  308  gc "Nuevos datos para tabla de machines"
+  309  gc -m "Nuevos datos para tabla de machines"
+  310  clear
+  311  git push
+  312  clear
+  313  ssh carcua3@deltacar.mx
+  314  clear
+  315  gaa
+  316  gc -m "Error de dedo"
+  317  gp
+  318  gaa
+  319  clear
+  320  gc -m "Modal para maquinaria"
+  321  gp
+  322  clear
