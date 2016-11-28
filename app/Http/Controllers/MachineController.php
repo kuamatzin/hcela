@@ -28,7 +28,6 @@ class MachineController extends Controller
 
     public function store(MachineRequest $request)
     {
-        dd($request->all());
         $request = $this->prepareData($request);
         Machine::create($request->all());
 
