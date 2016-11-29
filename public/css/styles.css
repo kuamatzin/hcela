@@ -811,60 +811,66 @@ h1.logo img {
 .projects-section .img-holder-1 {
   background: url('../img/presentacion/escuadradora.png') no-repeat;
   background-size: 100%;
+  background-position: 50% 30%;
 }
 .projects-section .img-holder-2 {
   background: url('../img/presentacion/circular.png') no-repeat;
   background-size: 100%;
+  background-position: 50% 30%;
 }
 .projects-section .img-holder-3 {
-  background: url('../img/presentacion/trompo.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('../img/presentacion/trompo.png') no-repeat;
+  background-position: 50% 10%;
 }
 .projects-section .img-holder-4 {
   background: url('../img/presentacion/lijadora.png') no-repeat;
-  background-size: 100%;
+  background-size: 80%;
+  background-position: 50% 30%;
 }
 .projects-section .img-holder-5 {
   background: url('../img/presentacion/torno.png') no-repeat;
-  background-size: 100%;
+  background-size: 80%;
+  background-position: 50% 30%;
 }
 .projects-section .img-holder-6 {
   background: url('../img/presentacion/escoplo.png') no-repeat;
-  background-size: 100%;
+  background-size: 80%;
+  background-position: 50% 30%;
 }
 .projects-section .img-holder-7 {
-  background: url('../img/presentacion/cinta.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('../img/presentacion/cinta.png') no-repeat;
+  background-size: 40%;
+  background-position: 50% 10%;
 }
 .projects-section .img-holder-8 {
   background: url('../img/presentacion/mandril.png') no-repeat;
   background-size: 100%;
+  background-position: 50% 30%;
 }
 .projects-section .img-holder-9 {
   background: url('../img/presentacion/trompo_modulador.png') no-repeat;
-  background-size: 100% 100%;
+  background-size: 45%;
+  background-position: 50% 30%;
 }
 .projects-section .img-holder-10 {
   background: url('../img/presentacion/tornillo.png') no-repeat;
-  background-size: 100%;
+  background-size: 80%;
+  background-position: 50% 30%;
 }
 .projects-section .img-holder-11 {
   background: url('../img/presentacion/husillo.png') no-repeat;
   background-size: 100%;
+  background-position: 50% 40%;
 }
 .projects-section .img-holder-12 {
   background: url('../img/presentacion/sargento.png') no-repeat;
   background-size: 100%;
+  background-position: 50% 40%;
 }
 .projects-section .img-holder-13 {
   background: url('../img/presentacion/escoplo.png') no-repeat;
-  background-size: 100%;
+  background-size: 80%;
+  background-position: 50% 30%;
 }
 .latest-projects {
   margin-bottom: 60px;
