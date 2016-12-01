@@ -88,10 +88,16 @@
                     <div class="col-md-2">
                         {!! Form::label('especificaciones[]', 'Especificacion') !!}
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-4">
                         <div class="form-group{{ $errors->has('especificaciones[]') ? ' has-error' : '' }}">
-                            {!! Form::text('especificaciones[]', null, ['class' => 'form-control', 'required' => 'required', 'v-model' => 'especificacion']) !!}
+                            {!! Form::text('especificaciones[]', null, ['class' => 'form-control', 'required' => 'required']) !!}
                             <small class="text-danger">{{ $errors->first('especificaciones[]') }}</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group{{ $errors->has('especificaciones_dos[]') ? ' has-error' : '' }}">
+                            {!! Form::text('especificaciones_dos[]', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                            <small class="text-danger">{{ $errors->first('especificaciones_dos[]') }}</small>
                         </div>
                     </div>
                     <div class="col-md-1">

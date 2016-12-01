@@ -36,7 +36,7 @@
                 <div class="content">
                     <div class="row">
                         <figure class="figure col-xs-12 col-md-5">
-                            <img class="img-responsive" v-if="active_machine" v-bind:src="active_machine.photos[0]" alt="" />
+                            <img class="img-responsive" style="padding-top: 100px" v-if="active_machine" v-bind:src="active_machine.photos[0]" alt="Herramientas Cela" />
                         </figure>
                         <div class="details col-xs-12 col-md-7">
                             <div v-if="!pago">
@@ -57,82 +57,87 @@
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="profile">
                                         <h3>Especificaciones</h3>
-                                        <div class="panel panel-default" v-for="(specification_name, specifications) in active_machine.specifications">
-                                            <div class="panel-body">
-                                                <p>@{{specification_name}}<p>
-                                                    <ul class="list-group">
-                                                        <li class="list-group-item" v-for="specification in specifications">@{{specification}}</li>
-                                                    </ul>
-                                                </div>
+                                        <div class="col-md-8" v-for="(specification_name, specifications) in active_machine.specifications">
+                                            <p>@{{specification_name}}<p>
+                                            <div class="table-responsive">
+                                                <table class="table table-hover">
+                                                    <tbody>
+                                                        <tr v-for="specification in specifications">
+                                                            <td>@{{specification[0]}}</td>
+                                                            <td>@{{specification[1]}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane" id="messages">
-                                            <!-- 16:9 aspect ratio -->
-                                            <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe class="embed-responsive-item" v-if="active_machine" v-bind:src="active_machine.video"></iframe>
-                                            </div>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane" id="settings">
-                                            
                                         </div>
                                     </div>
+                                    <div role="tabpanel" class="tab-pane" id="messages">
+                                        <!-- 16:9 aspect ratio -->
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe class="embed-responsive-item" v-if="active_machine" v-bind:src="active_machine.video"></iframe>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="settings">
+                                        
+                                    </div>
                                 </div>
-                                <div v-if="pago">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-xs-12 col-md-4">
-                                                <div class="panel panel-default">
-                                                    <div class="panel-heading">
-                                                        <h3 class="panel-title">
-                                                        INFORMACIÓN DE PAGO
-                                                        </h3>
-                                                    </div>
-                                                    <div class="panel-body">
-                                                        <form role="form" v-on:submit.prevent="paymentConekta">
-                                                            <div class="form-group">
-                                                                <label for="cardNumber">
-                                                                    NOMBRE EN TARJETA</label>
-                                                                <div class="">
-                                                                    <input type="text" class="form-control" id="cardName" placeholder="Nombre en Tarjeta"
-                                                                    required autofocus v-model="card_name"/>
-                                                                </div>
+                            </div>
+                            <div v-if="pago">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                    INFORMACIÓN DE PAGO
+                                                    </h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <form role="form" v-on:submit.prevent="paymentConekta">
+                                                        <div class="form-group">
+                                                            <label for="cardNumber">
+                                                            NOMBRE EN TARJETA</label>
+                                                            <div class="">
+                                                                <input type="text" class="form-control" id="cardName" placeholder="Nombre en Tarjeta"
+                                                                required autofocus v-model="card_name"/>
                                                             </div>
-                                                            <div class="form-group">
-                                                                <label for="cardNumber">
-                                                                    NÚMERO DE TARJETA</label>
-                                                                <div class="input-group">
-                                                                    <input type="text" class="form-control" id="cardNumber" placeholder="Número de Tarjeta Válido"
-                                                                    required autofocus v-model="card_number" v-on:keyup="validarTarjeta"/>
-                                                                    <span class="input-group-addon" v-show="!valid_card"><span class="glyphicon glyphicon-ok"></span></span>
-                                                                    <span class="input-group-addon alert-success" v-show="valid_card"><span class="glyphicon glyphicon-ok" style="color:green"></span></span>
-                                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-xs-7 col-md-7">
-                                                                    <div class="form-group">
-                                                                        <label for="expityMonth">
-                                                                        FECHA DE EXPIRACIÓN</label>
-                                                                        <div class="col-xs-6 col-lg-6 pl-ziro">
-                                                                            <input type="text" class="form-control" id="expityMonth" placeholder="MM" required v-model="card_expMonth"/>
-                                                                        </div>
-                                                                        <div class="col-xs-6 col-lg-6 pl-ziro">
-                                                                            <input type="text" class="form-control" id="expityYear" placeholder="YY" required v-model="card_expYear"/></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-xs-5 col-md-5 pull-right">
-                                                                        <div class="form-group">
-                                                                            <label for="cvCode">
-                                                                            CVC</label>
-                                                                            <input type="password" class="form-control" id="cvCode" placeholder="CVC" required v-model="card_cvc"/>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <button class="btn btn-success btn-lg btn-block" role="button" v-show="boton_pagar">Pagar</button>
-                                                                <a class="btn btn-success btn-lg btn-block" role="button" v-show="boton_procesando_pago"><img src="http://www.techspot.com/images/loading_blue2.gif" class="img-responsive center-block"></a>
-                                                            </form>
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label for="cardNumber">
+                                                            NÚMERO DE TARJETA</label>
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" id="cardNumber" placeholder="Número de Tarjeta Válido"
+                                                                required autofocus v-model="card_number" v-on:keyup="validarTarjeta"/>
+                                                                <span class="input-group-addon" v-show="!valid_card"><span class="glyphicon glyphicon-ok"></span></span>
+                                                                <span class="input-group-addon alert-success" v-show="valid_card"><span class="glyphicon glyphicon-ok" style="color:green"></span></span>
+                                                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-7 col-md-7">
+                                                                <div class="form-group">
+                                                                    <label for="expityMonth">
+                                                                    FECHA DE EXPIRACIÓN</label>
+                                                                    <div class="col-xs-6 col-lg-6 pl-ziro">
+                                                                        <input type="text" class="form-control" id="expityMonth" placeholder="MM" required v-model="card_expMonth"/>
+                                                                    </div>
+                                                                    <div class="col-xs-6 col-lg-6 pl-ziro">
+                                                                        <input type="text" class="form-control" id="expityYear" placeholder="YY" required v-model="card_expYear"/></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-xs-5 col-md-5 pull-right">
+                                                                    <div class="form-group">
+                                                                        <label for="cvCode">
+                                                                        CVC</label>
+                                                                        <input type="password" class="form-control" id="cvCode" placeholder="CVC" required v-model="card_cvc"/>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn btn-success btn-lg btn-block" role="button" v-show="boton_pagar">Pagar</button>
+                                                            <a class="btn btn-success btn-lg btn-block" role="button" v-show="boton_procesando_pago"><img src="http://www.techspot.com/images/loading_blue2.gif" class="img-responsive center-block"></a>
+                                                        </form>
                                                     </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

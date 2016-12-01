@@ -13,10 +13,17 @@
     {!! Form::text('video', null, ['class' => 'form-control', 'required' => '']) !!}
     <small class="text-danger">{{ $errors->first('video') }}</small>
 </div>
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <img src="/{{$machine->photos[0]}}" alt="" class="img-responsive">
+    </div>
+</div>
+<br>
 <div class="form-group{{ $errors->has('photo[]') ? ' has-error' : '' }}">
     {!! Form::label('photo[]', 'Foto') !!}
     {!! Form::file('photo[]', ['required' => 'required']) !!}
-    <p class="help-block">Selecciona una imagen</p>
+    <p class="help-block">Selecciona una imagen para cambiar la foto de la máquina</p>
     <small class="text-danger">{{ $errors->first('photo[]') }}</small>
 </div>
 <div class="form-group{{ $errors->has('user_guide_file') ? ' has-error' : '' }}">
@@ -26,12 +33,12 @@
 </div>
 <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
     {!! Form::label('type', 'Tipo') !!}
-    {!! Form::select('type', [1 => 'Accesorio', 2 => 'Maquinaria'], null, ['id' => 'type', 'class' => 'form-control', 'required' => '']) !!}
+    {!! Form::select('type', [1 => 'Accesorio', 2 => 'Maquinaria'], $machine->getOriginal('type'), ['id' => 'type', 'class' => 'form-control', 'required' => '']) !!}
     <small class="text-danger">{{ $errors->first('type') }}</small>
 </div>
 <div class="form-group{{ $errors->has('machine_type') ? ' has-error' : '' }}">
     {!! Form::label('machine_type', 'Tipo de Máquina') !!}
-    {!! Form::select('machine_type',[1 => 'Mandril', 2 => 'Trompo', 3 => 'Sujección', 4 => 'Escuadradora', 5 => 'Sierra Circular', 6 => 'Trompo', 7 => 'Lijadora de Banda', 8 => 'Torno', 9 => 'Escoplo', 10 => 'Sierra Cinta'], null, ['id' => 'machine_type', 'class' => 'form-control', 'required' => '']) !!}
+    {!! Form::select('machine_type',[1 => 'Mandril', 2 => 'Trompo', 3 => 'Sujección', 4 => 'Escuadradora', 5 => 'Sierra Circular', 6 => 'Trompo', 7 => 'Lijadora de Banda', 8 => 'Torno', 9 => 'Escoplo', 10 => 'Sierra Cinta'], $machine->getOriginal('machine_type'), ['id' => 'machine_type', 'class' => 'form-control', 'required' => '']) !!}
     <small class="text-danger">{{ $errors->first('machine_type') }}</small>
 </div>
 <hr>
@@ -91,10 +98,16 @@
                     <div class="col-md-2">
                         {!! Form::label('especificaciones[]', 'Especificacion') !!}
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-4">
                         <div class="form-group{{ $errors->has('especificaciones[]') ? ' has-error' : '' }}">
                             {!! Form::text('especificaciones[]', null, ['class' => 'form-control', 'required' => 'required', 'v-model' => 'especificacion']) !!}
                             <small class="text-danger">{{ $errors->first('especificaciones[]') }}</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group{{ $errors->has('especificaciones_dos[]') ? ' has-error' : '' }}">
+                            {!! Form::text('especificaciones_dos[]', null, ['class' => 'form-control', 'required' => 'required', 'v-model' => 'categoria.especificaciones_d[$index]']) !!}
+                            <small class="text-danger">{{ $errors->first('especificaciones_dos[]') }}</small>
                         </div>
                     </div>
                     <div class="col-md-1">

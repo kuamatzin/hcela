@@ -9,7 +9,7 @@
                 </div>
                 {{$machine->characteris}}
                 <div class="panel-body">
-                    {!! Form::model($machine, ['route' => ['catalogo.update', $machine->id], 'method' => 'PUT']) !!}
+                    {!! Form::model($machine, ['route' => ['catalogo.update', $machine->id], 'method' => 'PUT', 'files' => true]) !!}
                         @include('machines.form_edit', ['submitButtonText' => 'Guardar'])
                     {!! Form::close() !!}
                 </div>
@@ -30,17 +30,19 @@
         ready: function(){
             this.caracteristicas = JSON.parse(this.caracteristicas)
             this.especificaciones_server = JSON.parse(this.especificaciones_server)
-            
+
             for (var nombre in this.especificaciones_server) {
                 if (this.especificaciones_server.hasOwnProperty(nombre)) {
                     var especificaciones_a = [];
+                    var especificaciones_d = [];
                     var nombreCategoria = nombre;
                     var numero_especificaciones = 0;
                     for(var data in this.especificaciones_server[String(nombre)]){
-                        especificaciones_a.push(this.especificaciones_server[String(nombre)][data])
+                        especificaciones_a.push(this.especificaciones_server[String(nombre)][data][0])
+                        especificaciones_d.push(this.especificaciones_server[String(nombre)][data][1])
                         numero_especificaciones = numero_especificaciones + 1;
                     }
-                    var data = { nombre: nombreCategoria, especificaciones: especificaciones_a, numero_especificaciones: 0 }
+                    var data = { nombre: nombreCategoria, especificaciones: especificaciones_a, especificaciones_d: especificaciones_d,numero_especificaciones: numero_especificaciones }
                     this.especificaciones.push(data)
                 }
             }

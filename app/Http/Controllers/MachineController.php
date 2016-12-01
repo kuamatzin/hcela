@@ -4,6 +4,7 @@ namespace HerramientasCela\Http\Controllers;
 
 use HerramientasCela\Http\Requests;
 use HerramientasCela\Http\Requests\MachineRequest;
+use HerramientasCela\Http\Requests\MachineEditRequest;
 use HerramientasCela\Machine;
 
 class MachineController extends Controller
@@ -38,9 +39,12 @@ class MachineController extends Controller
     {
         $request['characteristics'] = $request->caracteristicas;
         $request['specifications'] = $this->build_specifications_array($request);
-        $request['photos'] = $this->getPhotos($request->photo);
-        $request['user_guide'] = $request->file('user_guide_file')->store('users_guides', 'public');
-
+        if ($request->photo) {
+            $request['photos'] = $this->getPhotos($request->photo);
+        }
+        if ($request->user_guide) {
+            $request['user_guide'] = $request->file('user_guide_file')->store('users_guides', 'public');
+        }
         return $request;
     }
 
@@ -62,7 +66,7 @@ class MachineController extends Controller
                 $nombre = $request->nombres_especificaciones[$key];
                 $descripciones_especificacion = array();
                 for ($i=0; $i < $numero_especificacion; $i++) { 
-                    array_push($descripciones_especificacion, $request->especificaciones[$contador]);
+                    array_push($descripciones_especificacion, [$request->especificaciones[$contador], $request->especificaciones_dos[$contador]]);
                     $contador = $contador + 1;
                 }
                 $specifications[$nombre] = $descripciones_especificacion;
@@ -81,8 +85,11 @@ class MachineController extends Controller
         return view('machines.edit', compact('machine'));
     }
 
-    public function update($id)
+    public function update(MachineEditRequest $request, $machine_id)
     {
-
+        $request = $this->prepareData($request);
+        $machine = Machine::findOrFail($machine_id);
+        $machine->update($request->all());
+        return redirect('catalogo');
     }
 }

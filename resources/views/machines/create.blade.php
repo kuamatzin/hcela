@@ -24,6 +24,7 @@
         data: {
             caracteristicas: [],
             especificaciones: [],
+            especificaciones_dos: []
         },
         methods: {
             agregar_especificacion: function(){

@@ -10,9 +10,11 @@
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Mandriles</h4>
-                                    <div class="desc">Project intro goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor...</div>
-                                    <a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#project-modal-1">View Details</a>
-                                    <a class="link" href="#" data-toggle="modal" data-target="#project-modal-1"></a>
+                                    <ul class="list-group">
+                                        @foreach($mandriles as $key => $mandril)
+                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$mandril}})">{{$mandril->name}}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
