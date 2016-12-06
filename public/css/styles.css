@@ -820,11 +820,12 @@ h1.logo img {
 }
 .projects-section .img-holder-3 {
   background: url('../img/presentacion/trompo.png') no-repeat;
-  background-position: 50% 10%;
+  background-size: 70%;
+  background-position: 50% 25%;
 }
 .projects-section .img-holder-4 {
   background: url('../img/presentacion/lijadora.png') no-repeat;
-  background-size: 80%;
+  background-size: 60%;
   background-position: 50% 30%;
 }
 .projects-section .img-holder-5 {
@@ -834,7 +835,7 @@ h1.logo img {
 }
 .projects-section .img-holder-6 {
   background: url('../img/presentacion/escoplo.png') no-repeat;
-  background-size: 80%;
+  background-size: 45%;
   background-position: 50% 30%;
 }
 .projects-section .img-holder-7 {

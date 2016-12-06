@@ -1,8 +1,6 @@
 <section id="contact" class="contact-section text-center">
     <div class="container">
         <h2 class="section-title">Contacto</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15092.626595817006!2d-98.1794781!3d18.968688!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdadde0b99c1be5f8!2sHerramientas+Cela!5e0!3m2!1ses-419!2smx!4v1479425045172" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-        <br><br><br>
         <div class="contact-intro">
             <p>¿Tienes dudas o requieres más información acerca de nuestros produtos?. No dudes en contactarnos</p>
         </div>
@@ -72,5 +70,7 @@
                 </div>
             </div>
         </form>
+        <br><br><br>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15092.626595817006!2d-98.1794781!3d18.968688!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdadde0b99c1be5f8!2sHerramientas+Cela!5e0!3m2!1ses-419!2smx!4v1479425045172" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
 </section>

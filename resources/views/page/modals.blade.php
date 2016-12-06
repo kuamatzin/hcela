@@ -35,10 +35,10 @@
             <div class="modal-body">
                 <div class="content">
                     <div class="row">
-                        <figure class="figure col-xs-12 col-md-5">
+                        <figure class="figure col-xs-12 col-md-6">
                             <img class="img-responsive" style="padding-top: 100px" v-if="active_machine" v-bind:src="active_machine.photos[0]" alt="Herramientas Cela" />
                         </figure>
-                        <div class="details col-xs-12 col-md-7">
+                        <div class="details col-xs-12 col-md-6">
                             <div v-if="!pago">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
@@ -50,14 +50,14 @@
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane active" id="home">
-                                        <h3>Características</h3>
+                                        <br>
                                         <ul class="list-group">
                                             <li class="list-group-item" v-for="characteristic in active_machine.characteristics">@{{characteristic}}</li>
                                         </ul>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="profile">
-                                        <h3>Especificaciones</h3>
                                         <div class="col-md-8" v-for="(specification_name, specifications) in active_machine.specifications">
+                                            <br>
                                             <p>@{{specification_name}}<p>
                                             <div class="table-responsive">
                                                 <table class="table table-hover">
@@ -146,7 +146,8 @@
                         </div>
                         
                         <div class="review text-center">
-                            <a class="btn btn-primary btn-cta scrollto" v-if="!pago" v-on:click="pago=true">Comprar</a>
+                            <a class="btn btn-primary btn-cta scrollto" v-show="active_machine.sellable" v-if="!pago" v-on:click="pago=true">Comprar</a>
+                            <a class="btn btn-primary btn-cta" v-show="!active_machine.sellable" href="/users_guides/catalogo.pdf" download target="_blank">Descargar Catálogo</a>
                             <a class="btn btn-warning btn-cta scrollto" v-if="pago" v-on:click="pago=false">Regresar</a>
                         </div>
                         
