@@ -35,10 +35,13 @@
             <div class="modal-body">
                 <div class="content">
                     <div class="row">
-                        <figure class="figure col-xs-12 col-md-6">
+                        <figure class="figure col-xs-12 col-md-12">
                             <img class="img-responsive" style="padding-top: 100px" v-if="active_machine" v-bind:src="active_machine.photos[0]" alt="Herramientas Cela" />
                         </figure>
-                        <div class="details col-xs-12 col-md-6">
+                        <br>
+                        <hr>
+                        <br>
+                        <div class="details col-xs-8 col-md-8 col-md-offset-2 col-xs-offset-2">
                             <div v-if="!pago">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
@@ -51,20 +54,40 @@
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane active" id="home">
                                         <br>
-                                        <ul class="list-group">
-                                            <li class="list-group-item" v-for="characteristic in active_machine.characteristics">@{{characteristic}}</li>
-                                        </ul>
+                                        <div class="row">
+                                            <div class="col-md-8 col-md-offset-2">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="active">@{{active_machine.name}}</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr v-for="characteristic in active_machine.characteristics">
+                                                                <td class="info">@{{characteristic}}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="profile">
-                                        <div class="col-md-8" v-for="(specification_name, specifications) in active_machine.specifications">
+                                        <div class="col-md-6" v-for="(specification_name, specifications) in active_machine.specifications">
                                             <br>
-                                            <p>@{{specification_name}}<p>
                                             <div class="table-responsive">
                                                 <table class="table table-hover">
                                                     <tbody>
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="active">@{{specification_name}}</th>
+                                                                <th class="active"></th>
+                                                            </tr>
+                                                        </thead>
                                                         <tr v-for="specification in specifications">
-                                                            <td>@{{specification[0]}}</td>
-                                                            <td>@{{specification[1]}}</td>
+                                                            <td class="info">@{{specification[0]}}</td>
+                                                            <td class="info">@{{specification[1]}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -72,6 +95,7 @@
                                         </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="messages">
+                                        <br>
                                         <!-- 16:9 aspect ratio -->
                                         <div class="embed-responsive embed-responsive-16by9">
                                             <iframe class="embed-responsive-item" v-if="active_machine" v-bind:src="active_machine.video"></iframe>
