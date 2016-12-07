@@ -9,7 +9,7 @@ class Machine extends Model
     protected $table = 'machines';
 
     protected $fillable = [
-        'name', 'description', 'photos', 'characteristics', 'specifications', 'video', 'user_guide', 'type', 'machine_type'
+        'name', 'description', 'photos', 'characteristics', 'specifications', 'video', 'user_guide', 'type', 'machine_type', 'sellable', 'price'
     ];
 
     /**

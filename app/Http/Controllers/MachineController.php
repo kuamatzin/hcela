@@ -42,6 +42,9 @@ class MachineController extends Controller
         if ($request->photo) {
             $request['photos'] = $this->getPhotos($request->photo);
         }
+        if ($request->sellable == null) {
+            $request['sellable'] = false;
+        }
         if ($request->user_guide) {
             $request['user_guide'] = $request->file('user_guide_file')->store('users_guides', 'public');
         }
