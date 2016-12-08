@@ -74,7 +74,7 @@
                                         </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="profile">
-                                        <div class="col-md-6" v-for="(specification_name, specifications) in active_machine.specifications">
+                                        <div class="col-md-10 col-md-offset-1" v-for="(specification_name, specifications) in active_machine.specifications">
                                             <br>
                                             <div class="table-responsive">
                                                 <table class="table table-hover">
@@ -87,7 +87,7 @@
                                                         </thead>
                                                         <tr v-for="specification in specifications">
                                                             <td class="info">@{{specification[0]}}</td>
-                                                            <td class="info">@{{specification[1]}}</td>
+                                                            <td class="info" class="pull-right">@{{specification[1]}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
