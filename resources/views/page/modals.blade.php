@@ -47,8 +47,8 @@
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" style="color:black">Características</a></li>
                                     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" style="color:black">Especificaciones</a></li>
-                                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab" style="color:black">Video</a></li>
-                                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab" style="color:black">Manual</a></li>
+                                    <li v-if="active_machine.video" role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab" style="color:black">Video</a></li>
+                                    <li v-if="active_machine.user_guide" role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab" style="color:black">Manual</a></li>
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content">
@@ -102,7 +102,10 @@
                                         </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="settings">
-                                        
+                                        <br>
+                                        <a href="@{{active_machine.user_guide}}" download target="_blank">
+                                            <img src="img/user_guide.png" alt="" class="img-responsive center-block">
+                                        </a>
                                     </div>
                                 </div>
                             </div>

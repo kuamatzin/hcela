@@ -11,16 +11,16 @@ use Illuminate\Support\Facades\Validator;
 class PageController extends Controller
 {
     public function index(){
-        $mandriles = Machine::where('machine_type', 1)->get();
-        $trompos = Machine::where('machine_type', 2)->get();
-        $sujecciones = Machine::where('machine_type', 3)->get();
-        $escuadradoras = Machine::where('machine_type', 4)->get();
-        $circulares = Machine::where('machine_type', 5)->get();
-        $trompos = Machine::where('machine_type', 6)->get();
-        $lijadoras = Machine::where('machine_type', 7)->get();
-        $tornos = Machine::where('machine_type', 8)->get();
-        $escoplos = Machine::where('machine_type', 9)->get();
-        $cintas = Machine::where('machine_type', 10)->get();
+        $mandriles = Machine::where('machine_type', 1)->orderBy('position')->get();
+        $trompos = Machine::where('machine_type', 2)->orderBy('position')->get();
+        $sujecciones = Machine::where('machine_type', 3)->orderBy('position')->get();
+        $escuadradoras = Machine::where('machine_type', 4)->orderBy('position')->get();
+        $circulares = Machine::where('machine_type', 5)->orderBy('position')->get();
+        $trompos_herramienta = Machine::where('machine_type', 6)->orderBy('position')->get();
+        $lijadoras = Machine::where('machine_type', 7)->orderBy('position')->get();
+        $tornos = Machine::where('machine_type', 8)->orderBy('position')->get();
+        $escoplos = Machine::where('machine_type', 9)->orderBy('position')->get();
+        $cintas = Machine::where('machine_type', 10)->orderBy('position')->get();
         return view('page.index',  compact('mandriles', 'trompos', 'sujecciones', 'escuadradoras', 'circulares', 'trompos', 'lijadoras', 'tornos', 'escoplos', 'cintas'));
     }
 

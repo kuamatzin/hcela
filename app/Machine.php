@@ -9,7 +9,7 @@ class Machine extends Model
     protected $table = 'machines';
 
     protected $fillable = [
-        'name', 'description', 'photos', 'characteristics', 'specifications', 'video', 'user_guide', 'type', 'machine_type', 'sellable', 'price'
+        'name', 'description', 'photos', 'characteristics', 'specifications', 'video', 'user_guide', 'type', 'machine_type', 'sellable', 'price', 'position'
     ];
 
     /**
@@ -66,7 +66,7 @@ class Machine extends Model
                 return "Sierra Circular";
                 break;
             case 6:
-                return "Trompo";
+                return "Trompo Herramienta";
                 break;
             case 7:
                 return "Lijadora de Banda";

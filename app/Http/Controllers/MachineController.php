@@ -45,7 +45,7 @@ class MachineController extends Controller
         if ($request->sellable == null) {
             $request['sellable'] = false;
         }
-        if ($request->user_guide) {
+        if ($request->user_guide_file) {
             $request['user_guide'] = $request->file('user_guide_file')->store('users_guides', 'public');
         }
         return $request;
