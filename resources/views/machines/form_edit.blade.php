@@ -15,7 +15,7 @@
 </div>
 <div class="form-group{{ $errors->has('machine_type') ? ' has-error' : '' }}">
     {!! Form::label('machine_type', 'Tipo de Máquina') !!}
-    {!! Form::select('machine_type',[1 => 'Mandril', 2 => 'Trompo', 3 => 'Sujección', 4 => 'Escuadradora', 5 => 'Sierra Circular', 6 => 'Trompo Herramienta', 7 => 'Lijadora de Banda', 8 => 'Torno', 9 => 'Escoplo', 10 => 'Sierra Cinta'], null, ['id' => 'machine_type', 'class' => 'form-control', 'required' => '']) !!}
+    {!! Form::select('machine_type',[1 => 'Mandril', 2 => 'Trompo', 3 => 'Tornillo de Banco', 4 => 'Escuadradora', 5 => 'Sierra Circular', 6 => 'Trompo Herramienta', 7 => 'Lijadora de Banda', 8 => 'Torno', 9 => 'Escoplo', 10 => 'Sierra Cinta', 11 => 'Husillo', 12 => 'Sargento'], null, ['id' => 'machine_type', 'class' => 'form-control', 'required' => '']) !!}
     <small class="text-danger">{{ $errors->first('machine_type') }}</small>
 </div>
 <div class="form-group{{ $errors->has('video') ? ' has-error' : '' }}">
@@ -58,11 +58,6 @@
     {!! Form::label('price', 'Precio (en centavos)') !!}
     {!! Form::text('price', null, ['class' => 'form-control']) !!}
     <small class="text-danger">{{ $errors->first('price') }}</small>
-</div>
-<div class="form-group{{ $errors->has('machine_type') ? ' has-error' : '' }}">
-    {!! Form::label('machine_type', 'Tipo de Máquina') !!}
-    {!! Form::select('machine_type',[1 => 'Mandril', 2 => 'Trompo', 3 => 'Sujección', 4 => 'Escuadradora', 5 => 'Sierra Circular', 6 => 'Trompo', 7 => 'Lijadora de Banda', 8 => 'Torno', 9 => 'Escoplo', 10 => 'Sierra Cinta'], $machine->getOriginal('machine_type'), ['id' => 'machine_type', 'class' => 'form-control', 'required' => '']) !!}
-    <small class="text-danger">{{ $errors->first('machine_type') }}</small>
 </div>
 <hr>
 

@@ -27,9 +27,11 @@
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Cabezales de trompo y routers</h4>
-                                    <div class="desc">Project intro goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor...</div>
-                                    <a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#project-modal-2">View Details</a>
-                                    <a class="link" href="#" data-toggle="modal" data-target="#project-modal-2"></a>
+                                    <ul class="list-group">
+                                        @foreach($trompos_herramientas as $key => $trompo)
+                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$trompo}})">{{$trompo->name}}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -42,9 +44,11 @@
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Tornillo de banco</h4>
-                                    <div class="desc">Project intro goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor...</div>
-                                    <a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#project-modal-3">View Details</a>
-                                    <a class="link" href="#" data-toggle="modal" data-target="#project-modal-3"></a>
+                                    <ul class="list-group">
+                                        @foreach($tornillos as $key => $tornillo)
+                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$tornillo}})">{{$tornillo->name}}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -59,9 +63,11 @@
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Husillo</h4>
-                                    <div class="desc">Project intro goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor...</div>
-                                    <a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#project-modal-1">View Details</a>
-                                    <a class="link" href="#" data-toggle="modal" data-target="#project-modal-1"></a>
+                                    <ul class="list-group">
+                                        @foreach($husillos as $key => $husillo)
+                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$husillo}})">{{$husillo->name}}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -74,9 +80,11 @@
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Sargento</h4>
-                                    <div class="desc">Project intro goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor...</div>
-                                    <a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#project-modal-2">View Details</a>
-                                    <a class="link" href="#" data-toggle="modal" data-target="#project-modal-2"></a>
+                                    <ul class="list-group">
+                                        @foreach($sargentos as $key => $sargento)
+                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$sargento}})">{{$sargento->name}}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>

@@ -69,7 +69,9 @@
                 <nav class="main-nav" role="navigation">
                     <div class="social-container">
                         <ul class="list-inline social-list">
-                            <li class="social-item"><a  target="_blank" href="https://www.youtube.com/channel/UC9psFkP6KZN43LyGM6bNXkQ"><i class="fa fa-youtube-play"></i></a></li>
+                            <li><a  target="_blank" href="https://www.youtube.com/channel/UC9psFkP6KZN43LyGM6bNXkQ">
+                                <img src="img/youtube.png" alt="" class="img-responsive" width="70%">
+                            </a></li>
                             </ul><!--//social-list-->
                         </div>
                         <div class="navbar-header text-center">

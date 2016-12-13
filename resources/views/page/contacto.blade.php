@@ -11,7 +11,7 @@
                 <span class="info"><a href="#">222 326 03 27</a></span>
             </li>
         </ul>
-        <form  class="contact-form form" method="get" action="/enviar_email">
+        <form  class="ufbl-front-form" method="get" action="/enviar_email">
             <div id="form-messages" class="text-center"></div>
             <div class="row text-left">
                 <div class="name-group col-sm-6 col-xs-12 form-group">

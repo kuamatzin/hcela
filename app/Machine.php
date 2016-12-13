@@ -57,7 +57,7 @@ class Machine extends Model
                 return "Trompo";
                 break;
             case 3:
-                return "Sujección";
+                return "Tornillo de Banco";
                 break;
             case 4:
                 return "Escuadradora";
@@ -79,6 +79,12 @@ class Machine extends Model
                 break;
             case 10:
                 return "Sierra Cinta";
+                break;
+            case 11:
+                return "Husillo";
+                break;
+            case 12:
+                return "Sargento";
                 break;
             default:
                 return 'Desconocido';
