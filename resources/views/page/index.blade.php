@@ -20,8 +20,11 @@
 
 @section('scripts')
 <script>
+$("#especificaciones").on("hidden.bs.modal", function () {
+    vm.active_machine.photos[0] = "";
+});
     window.Laravel = { csrfToken: '{{ csrf_token() }}' };
-    new Vue({
+    var vm = new Vue({
         el: "body",
         data: {
             active_machine: '',
