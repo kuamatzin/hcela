@@ -1399,3 +1399,7 @@ body {
 .li-herramientas {
   font-size: 15px;
 }
+
+.img-herramientas {
+  max-height: 550px;
+}

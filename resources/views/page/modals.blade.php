@@ -36,7 +36,7 @@
                 <div class="content">
                     <div class="row">
                         <figure class="figure col-xs-12 col-md-12">
-                            <img class="img-responsive" style="padding-top: 100px" v-if="active_machine" v-bind:src="active_machine.photos[0]" alt="Herramientas Cela" />
+                            <img class="img-responsive img-herramientas" style="padding-top: 100px" v-if="active_machine" v-bind:src="active_machine.photos[0]" alt="Herramientas Cela" />
                         </figure>
                         <br>
                         <hr>
