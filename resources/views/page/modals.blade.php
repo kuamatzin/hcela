@@ -45,7 +45,7 @@
                             <div v-if="!pago">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" style="color:black">Características</a></li>
+                                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" id="active_tab" style="color:black">Características</a></li>
                                     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" style="color:black">Especificaciones</a></li>
                                     <li v-if="active_machine.video" role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab" style="color:black">Video</a></li>
                                     <li v-if="active_machine.user_guide" role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab" style="color:black">Manual</a></li>
@@ -81,7 +81,7 @@
                                                     <tbody>
                                                         <thead>
                                                             <tr>
-                                                                <th class="active">@{{specification_name}}</th>
+                                                                <th class="active">@{{specification_name.toUpperCase()}}</th>
                                                                 <th class="active"></th>
                                                             </tr>
                                                         </thead>
@@ -103,6 +103,8 @@
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="settings">
                                         <br>
+                                        <h3 class="text-center">Descargar Manual</h3>
+                                        <hr>
                                         <a href="@{{active_machine.user_guide}}" download target="_blank">
                                             <img src="img/user_guide.png" alt="" class="img-responsive center-block">
                                         </a>
@@ -174,7 +176,7 @@
                         
                         <div class="review text-center">
                             <a class="btn btn-primary btn-cta scrollto" v-show="active_machine.sellable" v-if="!pago" v-on:click="pago=true">Comprar</a>
-                            <a class="btn btn-primary btn-cta" v-show="!active_machine.sellable" href="/users_guides/catalogo.pdf" download target="_blank">Descargar Catálogo</a>
+                            <a class="btn btn-primary btn-cta" v-show="!active_machine.sellable && !active_machine.user_guide" href="/users_guides/catalogo.pdf" download target="_blank">Descargar Catálogo</a>
                             <a class="btn btn-warning btn-cta scrollto" v-if="pago" v-on:click="pago=false">Regresar</a>
                         </div>
                         

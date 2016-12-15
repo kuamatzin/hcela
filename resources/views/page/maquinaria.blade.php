@@ -12,7 +12,7 @@
                                     <h4 class="title">Sierras Escuadradoras</h4>
                                     <ul class="list-group">
                                         @foreach($escuadradoras as $key => $escuadradora)
-                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$escuadradora}})">{{$escuadradora->name}}</li>
+                                        <li class="list-group-item li-link li-herramientas" v-on:click="setActiveMachine({{$escuadradora}})">{{$escuadradora->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -29,7 +29,7 @@
                                     <h4 class="title">Sierras Circulares</h4>
                                     <ul class="list-group">
                                         @foreach($circulares as $key => $circular)
-                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$circular}})">{{$circular->name}}</li>
+                                        <li class="list-group-item li-link li-herramientas" v-on:click="setActiveMachine({{$circular}})">{{$circular->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -46,7 +46,7 @@
                                     <h4 class="title">Trompos y Routers</h4>
                                     <ul class="list-group">
                                         @foreach($trompos as $key => $trompo)
-                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$trompo}})">{{$trompo->name}}</li>
+                                        <li class="list-group-item li-link li-herramientas" v-on:click="setActiveMachine({{$trompo}})">{{$trompo->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -65,7 +65,7 @@
                                     <h4 class="title">Lijadoras de Banda</h4>
                                     <ul class="list-group">
                                         @foreach($lijadoras as $key => $lijadora)
-                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$lijadora}})">{{$lijadora->name}}</li>
+                                        <li class="list-group-item li-link li-herramientas" v-on:click="setActiveMachine({{$lijadora}})">{{$lijadora->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -82,7 +82,7 @@
                                     <h4 class="title">Tornos</h4>
                                     <ul class="list-group">
                                         @foreach($tornos as $key => $torno)
-                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$torno}})">{{$torno->name}}</li>
+                                        <li class="list-group-item li-link li-herramientas" v-on:click="setActiveMachine({{$torno}})">{{$torno->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -99,7 +99,7 @@
                                     <h4 class="title">Escoplos</h4>
                                     <ul class="list-group">
                                         @foreach($escoplos as $key => $escoplo)
-                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$escoplo}})">{{$escoplo->name}}</li>
+                                        <li class="list-group-item li-link li-herramientas" v-on:click="setActiveMachine({{$escoplo}})">{{$escoplo->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -118,7 +118,7 @@
                                     <h4 class="title">Sierras Cinta</h4>
                                     <ul class="list-group">
                                         @foreach($cintas as $key => $cinta)
-                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$cinta}})">{{$cinta->name}}</li>
+                                        <li class="list-group-item li-link li-herramientas" v-on:click="setActiveMachine({{$cinta}})">{{$cinta->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>

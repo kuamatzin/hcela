@@ -12,7 +12,7 @@
                                     <h4 class="title">Mandriles</h4>
                                     <ul class="list-group">
                                         @foreach($mandriles as $key => $mandril)
-                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$mandril}})">{{$mandril->name}}</li>
+                                        <li class="list-group-item li-link li-herramientas" v-on:click="setActiveMachine({{$mandril}})">{{$mandril->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -29,7 +29,7 @@
                                     <h4 class="title">Cabezales de trompo y routers</h4>
                                     <ul class="list-group">
                                         @foreach($trompos_herramientas as $key => $trompo)
-                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$trompo}})">{{$trompo->name}}</li>
+                                        <li class="list-group-item li-link li-herramientas" v-on:click="setActiveMachine({{$trompo}})">{{$trompo->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -46,7 +46,7 @@
                                     <h4 class="title">Tornillo de banco</h4>
                                     <ul class="list-group">
                                         @foreach($tornillos as $key => $tornillo)
-                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$tornillo}})">{{$tornillo->name}}</li>
+                                        <li class="list-group-item li-link li-herramientas" v-on:click="setActiveMachine({{$tornillo}})">{{$tornillo->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -65,7 +65,7 @@
                                     <h4 class="title">Husillo</h4>
                                     <ul class="list-group">
                                         @foreach($husillos as $key => $husillo)
-                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$husillo}})">{{$husillo->name}}</li>
+                                        <li class="list-group-item li-link li-herramientas" v-on:click="setActiveMachine({{$husillo}})">{{$husillo->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -82,7 +82,7 @@
                                     <h4 class="title">Sargento</h4>
                                     <ul class="list-group">
                                         @foreach($sargentos as $key => $sargento)
-                                        <li class="list-group-item li-link" v-on:click="setActiveMachine({{$sargento}})">{{$sargento->name}}</li>
+                                        <li class="list-group-item li-link li-herramientas" v-on:click="setActiveMachine({{$sargento}})">{{$sargento->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>

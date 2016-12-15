@@ -48,6 +48,7 @@
         methods: {
             setActiveMachine: function(maquina){
                 this.active_machine = maquina;
+                $( "#active_tab" ).trigger( "click" );
                 $('#especificaciones').modal('show');
             },
             validarTarjeta: function(){
