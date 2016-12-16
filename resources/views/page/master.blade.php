@@ -73,7 +73,7 @@
                                         </div><!--//container-->
                                         </div><!--//topbar-->
                                         <div class="branding container">
-                                            <h1 class="logo pull-left"><img id="logo-image" class="logo-image" src="/img/logo.png" height="80px" alt=""></h1>
+                                            <h1 class="logo pull-left"><img id="logo-image" class="img-responsive" src="/img/logo.png"></h1>
                                             <ul class="header-info-list list-inline pull-right">
                                                 <li class="info-item contact-methods">
                                                     <span class="custom-icon icon-telephone_signal"></span>
