@@ -175,7 +175,12 @@
                         </div>
                         
                         <div class="review text-center">
+                            <!--
                             <a class="btn btn-primary btn-cta scrollto" v-show="active_machine.sellable" v-if="!pago" v-on:click="pago=true">Comprar</a>
+                            -->
+
+                            <button type="button" class="btn btn-primary" v-show="active_machine.sellable" v-on:click="agregar_carrito(active_machine)">Agregar al carrito de compra</button>
+
                             <a class="btn btn-primary btn-cta" v-show="!active_machine.sellable && !active_machine.user_guide" href="/users_guides/catalogo.pdf" download target="_blank">Descargar Catálogo</a>
                             <a class="btn btn-warning btn-cta scrollto" v-if="pago" v-on:click="pago=false">Regresar</a>
                         </div>
@@ -303,3 +308,102 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="carrito">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Mi carrito de compra</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-10 col-md-offset-1">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th></th>
+                                        <th class="text-center">Price</th>
+                                        <th class="text-center">Total</th>
+                                        <th> </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="maquina in carrito_compra">
+                                        <td class="col-sm-8 col-md-6">
+                                            <div class="media">
+                                                <a class="thumbnail pull-left" href="#"> <img class="media-object" v-bind:src="maquina.photos[0]" style="width: 72px; height: 72px;"> </a>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading"><a href="#">
+                                                    @{{maquina.name}}</a></h4>
+                                                    <!--
+                                                    <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
+                                                    <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
+                                                    -->
+                                                </div>
+                                            </div></td>
+                                            <td class="col-sm-1 col-md-1" style="text-align: center">
+                                            </td>
+                                            <td class="col-sm-1 col-md-1 text-center"><strong>
+                                                $@{{maquina.price}}
+                                            </strong></td>
+                                            <td class="col-sm-1 col-md-1 text-center"><strong>
+                                                $@{{maquina.price}}
+                                            </strong></td>
+                                            <td class="col-sm-1 col-md-1">
+                                                <button type="button" class="btn btn-danger" v-on:click="quitar_carrito(maquina)">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                                Eliminar
+                                            </button></td>
+                                        </tr>
+                                        <!--
+                                        <tr>
+                                            <td>   </td>
+                                            <td>   </td>
+                                            <td>   </td>
+                                            <td><h5>Subtotal</h5></td>
+                                            <td class="text-right"><h5><strong>$106.94</strong></h5></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>   </td>
+                                            <td>   </td>
+                                            <td>   </td>
+                                            <td><h5>Discount</h5></td>
+                                            <td class="text-right"><h5><strong>$6.94</strong></h5></td>
+                                        </tr>
+                                        -->
+                                        <tr>
+                                            <td>   </td>
+                                            <td>   </td>
+                                            <td>   </td>
+                                            <td><h3>Total</h3></td>
+                                            <td class="text-right"><h3><strong>${{$carrito->sum('price')}}</strong></h3></td>
+                                        </tr>
+                                        <tr>
+                                            <td>   </td>
+                                            <td>   </td>
+                                            <td>   </td>
+                                            <td>
+                                                <button type="button" class="btn btn-default">
+                                                <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                                            </button></td>
+                                            <td>
+                                                <button type="button" class="btn btn-success">
+                                                Checkout <span class="glyphicon glyphicon-play"></span>
+                                            </button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -5,12 +5,24 @@ namespace HerramientasCela\Http\Controllers;
 use HerramientasCela\Machine;
 use HerramientasCela\Mail\ContactoMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class PageController extends Controller
 {
     public function index(){
+        $carrito = \Request::cookie('carrito');
+        if ($carrito) {
+            if (!is_array($carrito)) {
+                $carrito = explode(',', $carrito);
+            }
+        }
+        else {
+            $carrito = [];
+        }
+        $carrito = Machine::find($carrito);
+
         $mandriles = Machine::where('machine_type', 1)->orderBy('position')->get();
         $trompos = Machine::where('machine_type', 2)->orderBy('position')->get();
         $tornillos = Machine::where('machine_type', 3)->orderBy('position')->get();
@@ -23,7 +35,7 @@ class PageController extends Controller
         $cintas = Machine::where('machine_type', 10)->orderBy('position')->get();
         $husillos = Machine::where('machine_type', 11)->orderBy('position')->get();
         $sargentos = Machine::where('machine_type', 12)->orderBy('position')->get();
-        return view('page.index',  compact('mandriles', 'trompos', 'tornillos', 'escuadradoras', 'circulares', 'trompos_herramientas', 'lijadoras', 'tornos', 'escoplos', 'cintas', 'husillos', 'sargentos'));
+        return view('page.index',  compact('mandriles', 'trompos', 'tornillos', 'escuadradoras', 'circulares', 'trompos_herramientas', 'lijadoras', 'tornos', 'escoplos', 'cintas', 'husillos', 'sargentos', 'carrito'));
     }
 
     public function enviar_email(Request $request)
@@ -45,5 +57,33 @@ class PageController extends Controller
         Mail::to($request->email)->send(new ContactoMail($request->all()));
 
         return "Exito";
+    }
+
+    public function guardarCarritoCompra(Request $request)
+    {
+        $carrito = $request->cookie('carrito');
+        //Ya existe cookie
+        if ($carrito) {
+            $carrito = explode(',', $carrito);
+            if (!in_array($request->machine, $carrito)) {
+                array_push($carrito, $request->machine);
+                $carrito = implode(',', $carrito);
+            }
+        }
+        else {
+            $carrito = $request->machine;
+        }
+        
+        return response()->json(['previousCookieValue' => Cookie::get('carrito')])->withCookie(cookie('carrito', $carrito));
+    }
+
+    public function quitarArticuloCarritoComptra(Request $request)
+    {
+        $carrito = $request->cookie('carrito');
+        if(($key = array_search($request->machine, $carrito)) !== false) {
+            unset($carrito[$key]);
+        }
+
+        return response()->json(['previousCookieValue' => Cookie::get('carrito')])->withCookie(cookie('carrito', $carrito));
     }
 }

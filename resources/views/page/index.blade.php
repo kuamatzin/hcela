@@ -25,7 +25,7 @@
     });
     window.Laravel = { csrfToken: '{{ csrf_token() }}' };
     var vm = new Vue({
-        el: "body",
+        el: "#app",
         data: {
             active_machine: '',
             pago: false,
@@ -46,7 +46,8 @@
             card_expYear: '',
             card_expMonth: '',
             boton_pagar: true,
-            boton_procesando_pago: false
+            boton_procesando_pago: false,
+            carrito_compra: {!! $carrito !!}
         },
         methods: {
             setActiveMachine: function(maquina){
@@ -133,6 +134,33 @@
                 }, function(error){
 
                 })
+            },
+            agregar_carrito: function(machine){
+                var comprobar = false;
+                for (var i = this.carrito_compra.length - 1; i >= 0; i--) {
+                    if (machine.id == this.carrito_compra[i].id) {
+                        comprobar = true;
+                        break;
+                    }
+                }
+                if (!comprobar) {
+                    this.$http.post('/guardarCarritoCompra', {machine: machine.id}).then((response) => {
+                    }, (response) => {
+                    });
+                }
+                else {
+                    swal("Este producto ya esta en tu carrito de compra")
+                }
+            },
+            quitar_carrito: function(machine){
+                for (var i = this.carrito_compra.length - 1; i >= 0; i--) {
+                    if (machine.id == this.carrito_compra[i].id) {
+                        this.carrito_compra.splice(i, 1);
+                    }
+                }
+                this.$http.post('/quitarCarritoCompra', {machine: machine.id}).then((response) => {
+                }, (response) => {
+                });
             }
         }
     })

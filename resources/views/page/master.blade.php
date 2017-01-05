@@ -34,16 +34,26 @@
 </head>
 <body data-spy="scroll">
     
-    <!-- ******HEADER****** -->
+    <div id="app">
+        <!-- ******HEADER****** -->
     <header id="header" class="header">
         <div id="topbar" class="topbar">
             <div class="container-fluid">
                 <nav class="main-nav" role="navigation">
                     <div class="social-container">
                         <ul class="list-inline social-list">
-                            <li><a  target="_blank" href="https://www.youtube.com/channel/UC9psFkP6KZN43LyGM6bNXkQ">
-                                <img src="img/youtube.png" alt="" class="img-responsive" width="70%">
-                            </a></li>
+                            <li>
+                                <a href="#">
+                                    <button type="button" class="btn btn-warning" data-toggle="modal" href='#carrito'>
+                                        <i class="fa fa-shopping-bag" aria-hidden="true"> <span class="badge">@{{carrito_compra.length}}</span></i>
+                                    </button>
+                                </a>
+                            </li>
+                            <li>
+                                <a  target="_blank" href="https://www.youtube.com/channel/UC9psFkP6KZN43LyGM6bNXkQ" style="margin-top: 2px">
+                                <img src="img/youtube.png" alt="" class="img-responsive" width="60%">
+                                </a>
+                            </li>
                             </ul><!--//social-list-->
                         </div>
                         <div class="navbar-header text-center">
@@ -90,6 +100,7 @@
                                                         </header><!--//header-->
                                                         
                                                         @yield('content')
+    </div>
                                                         
                                                         <!-- Main Javascript -->
                                                         <script type="text/javascript" src="/plugins/jquery-1.12.3.min.js"></script>
