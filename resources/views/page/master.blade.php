@@ -44,7 +44,7 @@
                         <ul class="list-inline social-list">
                             <li>
                                 <a href="#">
-                                    <button type="button" class="btn btn-warning" data-toggle="modal" href='#carrito'>
+                                    <button type="button" class="btn btn-warning" v-on:click="mostrarCarrito">
                                         <i class="fa fa-shopping-bag" aria-hidden="true"> <span class="badge">@{{carrito_compra.length}}</span></i>
                                     </button>
                                 </a>

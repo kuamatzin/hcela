@@ -64,7 +64,9 @@ class PageController extends Controller
         $carrito = $request->cookie('carrito');
         //Ya existe cookie
         if ($carrito) {
-            $carrito = explode(',', $carrito);
+            if (!is_array($carrito)) {
+                $carrito = explode(',', $carrito);
+            }
             if (!in_array($request->machine, $carrito)) {
                 array_push($carrito, $request->machine);
                 $carrito = implode(',', $carrito);
@@ -80,6 +82,9 @@ class PageController extends Controller
     public function quitarArticuloCarritoComptra(Request $request)
     {
         $carrito = $request->cookie('carrito');
+        if (!is_array($carrito)) {
+            $carrito = explode(',', $carrito);
+        }
         if(($key = array_search($request->machine, $carrito)) !== false) {
             unset($carrito[$key]);
         }

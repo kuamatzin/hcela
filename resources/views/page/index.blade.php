@@ -144,6 +144,7 @@
                     }
                 }
                 if (!comprobar) {
+                    this.carrito_compra.push(machine);
                     this.$http.post('/guardarCarritoCompra', {machine: machine.id}).then((response) => {
                     }, (response) => {
                     });
@@ -156,11 +157,22 @@
                 for (var i = this.carrito_compra.length - 1; i >= 0; i--) {
                     if (machine.id == this.carrito_compra[i].id) {
                         this.carrito_compra.splice(i, 1);
+                        if (this.carrito_compra.length == 0) {
+                            $('#carrito').modal('hide');
+                        }
                     }
                 }
                 this.$http.post('/quitarCarritoCompra', {machine: machine.id}).then((response) => {
                 }, (response) => {
                 });
+            },
+            mostrarCarrito: function(){
+                if (this.carrito_compra.length > 0) {
+                    $('#carrito').modal('show');
+                }
+                else {
+                    swal("Aun no hay produtos en el carrito de compra");
+                }
             }
         }
     })
