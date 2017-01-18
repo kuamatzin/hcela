@@ -5,6 +5,8 @@
             <li class="active" data-slide-to="0" data-target="#hero-carousel"></li>
             <li data-slide-to="1" data-target="#hero-carousel"></li>
             <li data-slide-to="2" data-target="#hero-carousel"></li>
+            <li data-slide-to="3" data-target="#hero-carousel"></li>
+            <li data-slide-to="4" data-target="#hero-carousel"></li>
         </ol>
         
         <div class="carousel-inner">
@@ -43,7 +45,35 @@
                         <!--
                         <h2 class="heading">Maquinaria y herramienta 100% mexicanos</h2>
                         -->
-                        <img src="img/mex.png" alt="" class="img-responsive center-block" width="300px">
+                        <!--<img src="img/mex.png" alt="" class="img-responsive center-block" width="300px">-->
+                        <!--
+                        <a class="btn btn-primary btn-cta scrollto" href="#projects2" target="_blank">Conoce nuestras herramientas</a>
+                        -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="item item-4">
+                <div class="item-content container text-center">
+                    <div class="item-content-inner">
+                        <!--
+                        <h2 class="heading">Maquinaria y herramienta 100% mexicanos</h2>
+                        -->
+                        <!--<img src="img/mex.png" alt="" class="img-responsive center-block" width="300px">-->
+                        <!--
+                        <a class="btn btn-primary btn-cta scrollto" href="#projects2" target="_blank">Conoce nuestras herramientas</a>
+                        -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="item item-5">
+                <div class="item-content container text-center">
+                    <div class="item-content-inner">
+                        <!--
+                        <h2 class="heading">Maquinaria y herramienta 100% mexicanos</h2>
+                        -->
+                        <!--<img src="img/mex.png" alt="" class="img-responsive center-block" width="300px">-->
                         <!--
                         <a class="btn btn-primary btn-cta scrollto" href="#projects2" target="_blank">Conoce nuestras herramientas</a>
                         -->

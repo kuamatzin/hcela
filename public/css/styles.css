@@ -577,25 +577,28 @@ h1.logo img {
   background-size: cover;
 }
 .hero-carousel .carousel-inner .item-3 {
-  background-image: url('../images/hero/hero-3.jpg');
+  background-image: url('../images/hero/1.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-position: 100% 40%;
 }
 .hero-carousel .carousel-inner .item-4 {
-  background-image: url('../images/hero/hero-4.jpg');
+  background-image: url('../images/hero/4.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-position: 100% 80%;
 }
 .hero-carousel .carousel-inner .item-5 {
-  background-image: url('../images/hero/hero-5.jpg');
+  background-image: url('../images/hero/6.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-position: 100% 90%;
 }
 .hero-carousel .carousel-inner .item-content-inner {
   max-width: 680px;
