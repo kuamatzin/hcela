@@ -554,11 +554,11 @@ h1.logo img {
   position: relative;
 }
 .hero-carousel {
-  height: 520px;
+  height: 620px;
   color: #fff;
 }
 .hero-carousel .carousel-inner .item {
-  height: 520px;
+  height: 620px;
   background-position: center center;
   padding-top: 90px;
 }
@@ -582,7 +582,7 @@ h1.logo img {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: 100% 40%;
+  background-position: 80% 40%;
 }
 .hero-carousel .carousel-inner .item-4 {
   background-image: url('../images/hero/4.jpg');
