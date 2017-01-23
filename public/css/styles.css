@@ -569,14 +569,8 @@ h1.logo img {
   -o-background-size: cover;
   background-size: cover;
 }
+
 .hero-carousel .carousel-inner .item-2 {
-  background-image: url('../images/hero/hero-2.jpg');
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-.hero-carousel .carousel-inner .item-3 {
   background-image: url('../images/hero/1.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -584,7 +578,7 @@ h1.logo img {
   background-size: cover;
   background-position: 80% 40%;
 }
-.hero-carousel .carousel-inner .item-4 {
+.hero-carousel .carousel-inner .item-3 {
   background-image: url('../images/hero/4.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -592,7 +586,7 @@ h1.logo img {
   background-size: cover;
   background-position: 100% 80%;
 }
-.hero-carousel .carousel-inner .item-5 {
+.hero-carousel .carousel-inner .item-4 {
   background-image: url('../images/hero/6.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
