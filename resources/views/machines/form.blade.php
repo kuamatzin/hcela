@@ -25,13 +25,13 @@
 </div>
 <div class="form-group{{ $errors->has('photo[]') ? ' has-error' : '' }}">
     {!! Form::label('photo[]', 'Foto') !!}
-    {!! Form::file('photo[]', []) !!}
+    {!! Form::file('photo[]', ['required' => 'required']) !!}
     <p class="help-block">Selecciona una imagen</p>
     <small class="text-danger">{{ $errors->first('photo[]') }}</small>
 </div>
 <div class="form-group{{ $errors->has('user_guide_file') ? ' has-error' : '' }}">
     {!! Form::label('user_guide_file', 'Guía de Usuario') !!}
-    {!! Form::file('user_guide_file', ['required' => '']) !!}
+    {!! Form::file('user_guide_file') !!}
     <small class="text-danger">{{ $errors->first('user_guide_file') }}</small>
 </div>
 <div class="form-group{{ $errors->has('position') ? ' has-error' : '' }}">
@@ -49,7 +49,7 @@
 </div>
 <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
     {!! Form::label('price', 'Precio (en centavos)') !!}
-    {!! Form::text('price', null, ['class' => 'form-control', 'required' => 'required']) !!}
+    {!! Form::text('price', null, ['class' => 'form-control']) !!}
     <small class="text-danger">{{ $errors->first('price') }}</small>
 </div>
 <hr>
@@ -66,7 +66,7 @@
             {!! Form::label('caracteristicas[]', 'Caracteristica:') !!}
         </div>
         <div class="col-md-9">
-            {!! Form::text('caracteristicas[]', null, ['class' => 'form-control', 'required' => 'required', 'v-model' => 'caracteristica']) !!}
+            {!! Form::text('caracteristicas[]', null, ['class' => 'form-control', 'v-model' => 'caracteristica']) !!}
             <small class="text-danger">{{ $errors->first('caracteristicas[]') }}</small>
         </div>
         <div class="col-md-1">
@@ -108,13 +108,13 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group{{ $errors->has('especificaciones[]') ? ' has-error' : '' }}">
-                            {!! Form::text('especificaciones[]', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                            {!! Form::text('especificaciones[]', null, ['class' => 'form-control']) !!}
                             <small class="text-danger">{{ $errors->first('especificaciones[]') }}</small>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group{{ $errors->has('especificaciones_dos[]') ? ' has-error' : '' }}">
-                            {!! Form::text('especificaciones_dos[]', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                            {!! Form::text('especificaciones_dos[]', null, ['class' => 'form-control']) !!}
                             <small class="text-danger">{{ $errors->first('especificaciones_dos[]') }}</small>
                         </div>
                     </div>
