@@ -20,12 +20,12 @@
 </div>
 <div class="form-group{{ $errors->has('video') ? ' has-error' : '' }}">
     {!! Form::label('video', 'Video') !!}
-    {!! Form::text('video', null, ['class' => 'form-control', 'required' => '']) !!}
+    {!! Form::text('video', null, ['class' => 'form-control']) !!}
     <small class="text-danger">{{ $errors->first('video') }}</small>
 </div>
 <div class="form-group{{ $errors->has('photo[]') ? ' has-error' : '' }}">
     {!! Form::label('photo[]', 'Foto') !!}
-    {!! Form::file('photo[]', ['required' => 'required']) !!}
+    {!! Form::file('photo[]', []) !!}
     <p class="help-block">Selecciona una imagen</p>
     <small class="text-danger">{{ $errors->first('photo[]') }}</small>
 </div>
