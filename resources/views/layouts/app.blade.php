@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Herramientas Cela </title>
 
     <!-- Styles -->
     <link href="/css/app-application.css" rel="stylesheet">
