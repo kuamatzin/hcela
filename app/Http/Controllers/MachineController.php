@@ -19,6 +19,7 @@ class MachineController extends Controller
     public function show($id)
     {
         $machine = Machine::findOrFail($id);
+
         return view('machines.show', compact('machine'));
     }
 
@@ -68,8 +69,17 @@ class MachineController extends Controller
             foreach ($request->numero_especificaciones as $key => $numero_especificacion) {
                 $nombre = $request->nombres_especificaciones[$key];
                 $descripciones_especificacion = array();
-                for ($i=0; $i < $numero_especificacion; $i++) { 
-                    array_push($descripciones_especificacion, [$request->especificaciones[$contador], $request->especificaciones_dos[$contador]]);
+                for ($i=0; $i < $numero_especificacion; $i++) {
+                    $datos = array();
+                    array_push($datos, $request->especificaciones[$contador]);
+                    array_push($datos, $request->especificaciones_dos[$contador]);
+                    if ($request->especificaciones_tres[$contador] != '') {
+                        array_push($datos, $request->especificaciones_tres[$contador]);
+                    }
+                    if ($request->especificaciones_cuatro[$contador] != '') {
+                        array_push($datos, $request->especificaciones_cuatro[$contador]);
+                    }
+                    array_push($descripciones_especificacion, $datos);
                     $contador = $contador + 1;
                 }
                 $specifications[$nombre] = $descripciones_especificacion;

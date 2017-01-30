@@ -101,21 +101,34 @@
             </div>
         </div>
         <div class="panel-body">
+            <br><br>
             <div v-for="especificacion in categoria.especificaciones" track-by="$index">
                 <div class="row">
                     <div class="col-md-2">
                         {!! Form::label('especificaciones[]', 'Especificacion') !!}
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group{{ $errors->has('especificaciones[]') ? ' has-error' : '' }}">
                             {!! Form::text('especificaciones[]', null, ['class' => 'form-control']) !!}
                             <small class="text-danger">{{ $errors->first('especificaciones[]') }}</small>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group{{ $errors->has('especificaciones_dos[]') ? ' has-error' : '' }}">
                             {!! Form::text('especificaciones_dos[]', null, ['class' => 'form-control']) !!}
                             <small class="text-danger">{{ $errors->first('especificaciones_dos[]') }}</small>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group{{ $errors->has('especificaciones_tres[]') ? ' has-error' : '' }}">
+                            {!! Form::text('especificaciones_tres[]', null, ['class' => 'form-control', 'placeholder' => 'Opcional']) !!}
+                            <small class="text-danger">{{ $errors->first('especificaciones_tres[]') }}</small>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group{{ $errors->has('especificaciones_cuatro[]') ? ' has-error' : '' }}">
+                            {!! Form::text('especificaciones_cuatro[]', null, ['class' => 'form-control', 'placeholder' => 'Opcional']) !!}
+                            <small class="text-danger">{{ $errors->first('especificaciones_cuatro[]') }}</small>
                         </div>
                     </div>
                     <div class="col-md-1">

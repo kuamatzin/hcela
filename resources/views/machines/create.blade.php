@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" id="crear-maquina">
+    <div class="container-fluid" id="crear-maquina">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-info">
                 <div class="panel-heading">
@@ -24,7 +24,9 @@
         data: {
             caracteristicas: [],
             especificaciones: [],
-            especificaciones_dos: []
+            especificaciones_dos: [],
+            especificaciones_tres: [],
+            especificaciones_cuatro: []
         },
         methods: {
             agregar_especificacion: function(){

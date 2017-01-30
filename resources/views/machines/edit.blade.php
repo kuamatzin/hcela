@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" id="editar-maquina">
+    <div class="container-fluid" id="editar-maquina">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-info">
                 <div class="panel-heading">
@@ -35,14 +35,18 @@
                 if (this.especificaciones_server.hasOwnProperty(nombre)) {
                     var especificaciones_a = [];
                     var especificaciones_d = [];
+                    var especificaciones_t = [];
+                    var especificaciones_c = [];
                     var nombreCategoria = nombre;
                     var numero_especificaciones = 0;
                     for(var data in this.especificaciones_server[String(nombre)]){
                         especificaciones_a.push(this.especificaciones_server[String(nombre)][data][0])
                         especificaciones_d.push(this.especificaciones_server[String(nombre)][data][1])
+                        especificaciones_t.push(this.especificaciones_server[String(nombre)][data][2])
+                        especificaciones_c.push(this.especificaciones_server[String(nombre)][data][3])
                         numero_especificaciones = numero_especificaciones + 1;
                     }
-                    var data = { nombre: nombreCategoria, especificaciones: especificaciones_a, especificaciones_d: especificaciones_d,numero_especificaciones: numero_especificaciones }
+                    var data = { nombre: nombreCategoria, especificaciones: especificaciones_a, especificaciones_d: especificaciones_d, especificaciones_t: especificaciones_t, especificaciones_c: especificaciones_c, numero_especificaciones: numero_especificaciones }
                     this.especificaciones.push(data)
                 }
             }
