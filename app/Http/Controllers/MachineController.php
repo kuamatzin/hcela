@@ -105,4 +105,9 @@ class MachineController extends Controller
         $machine->update($request->all());
         return redirect('catalogo');
     }
+
+    public function destroy($id)
+    {
+        Machine::destroy($id);
+    }
 }
