@@ -86,8 +86,7 @@
                                                             </tr>
                                                         </thead>
                                                         <tr v-for="specification in specifications">
-                                                            <td class="info" style="white-space:nowrap">@{{specification[0]}}</td>
-                                                            <td class="info" class="pull-right">@{{specification[1]}}</td>
+                                                            <td v-for="spec in specification">@{{spec}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
