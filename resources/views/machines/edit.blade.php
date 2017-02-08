@@ -37,6 +37,7 @@
                     var especificaciones_d = [];
                     var especificaciones_t = [];
                     var especificaciones_c = [];
+                    var especificaciones_cin = [];
                     var nombreCategoria = nombre;
                     var numero_especificaciones = 0;
                     for(var data in this.especificaciones_server[String(nombre)]){
@@ -44,9 +45,10 @@
                         especificaciones_d.push(this.especificaciones_server[String(nombre)][data][1])
                         especificaciones_t.push(this.especificaciones_server[String(nombre)][data][2])
                         especificaciones_c.push(this.especificaciones_server[String(nombre)][data][3])
+                        especificaciones_cin.push(this.especificaciones_server[String(nombre)][data][4])
                         numero_especificaciones = numero_especificaciones + 1;
                     }
-                    var data = { nombre: nombreCategoria, especificaciones: especificaciones_a, especificaciones_d: especificaciones_d, especificaciones_t: especificaciones_t, especificaciones_c: especificaciones_c, numero_especificaciones: numero_especificaciones }
+                    var data = { nombre: nombreCategoria, especificaciones: especificaciones_a, especificaciones_d: especificaciones_d, especificaciones_t: especificaciones_t, especificaciones_c: especificaciones_c, especificaciones_cin: especificaciones_cin, numero_especificaciones: numero_especificaciones }
                     this.especificaciones.push(data)
                 }
             }

@@ -26,7 +26,8 @@
             especificaciones: [],
             especificaciones_dos: [],
             especificaciones_tres: [],
-            especificaciones_cuatro: []
+            especificaciones_cuatro: [],
+            especificaciones_cinco: []
         },
         methods: {
             agregar_especificacion: function(){

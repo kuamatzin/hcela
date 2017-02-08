@@ -79,6 +79,9 @@ class MachineController extends Controller
                     if ($request->especificaciones_cuatro[$contador] != '') {
                         array_push($datos, $request->especificaciones_cuatro[$contador]);
                     }
+                    if ($request->especificaciones_cinco[$contador] != '') {
+                        array_push($datos, $request->especificaciones_cinco[$contador]);
+                    }
                     array_push($descripciones_especificacion, $datos);
                     $contador = $contador + 1;
                 }

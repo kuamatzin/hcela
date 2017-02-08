@@ -104,8 +104,8 @@
             <br><br>
             <div v-for="especificacion in categoria.especificaciones" track-by="$index">
                 <div class="row">
-                    <div class="col-md-2">
-                        {!! Form::label('especificaciones[]', 'Especificacion') !!}
+                    <div class="col-md-1">
+                        {!! Form::label('especificaciones[]', '') !!}
                     </div>
                     <div class="col-md-2">
                         <div class="form-group{{ $errors->has('especificaciones[]') ? ' has-error' : '' }}">
@@ -129,6 +129,12 @@
                         <div class="form-group{{ $errors->has('especificaciones_cuatro[]') ? ' has-error' : '' }}">
                             {!! Form::text('especificaciones_cuatro[]', null, ['class' => 'form-control', 'placeholder' => 'Opcional']) !!}
                             <small class="text-danger">{{ $errors->first('especificaciones_cuatro[]') }}</small>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group{{ $errors->has('especificaciones_cinco[]') ? ' has-error' : '' }}">
+                            {!! Form::text('especificaciones_cinco[]', null, ['class' => 'form-control', 'placeholder' => 'Opcional']) !!}
+                            <small class="text-danger">{{ $errors->first('especificaciones_cinco[]') }}</small>
                         </div>
                     </div>
                     <div class="col-md-1">
