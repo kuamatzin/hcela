@@ -38,7 +38,7 @@ class MachineController extends Controller
 
     private function prepareData($request)
     {
-        $request['characteristics'] = $request->caracteristicas;
+        $request['characteristics'] = $request->caracteristicas == null ? [] : $request->caracteristicas;
         $request['specifications'] = $this->build_specifications_array($request);
         if ($request->photo) {
             $request['photos'] = $this->getPhotos($request->photo);
@@ -81,6 +81,9 @@ class MachineController extends Controller
                     }
                     if ($request->especificaciones_cinco[$contador] != '') {
                         array_push($datos, $request->especificaciones_cinco[$contador]);
+                    }
+                    if ($request->especificaciones_seis[$contador] != '') {
+                        array_push($datos, $request->especificaciones_seis[$contador]);
                     }
                     array_push($descripciones_especificacion, $datos);
                     $contador = $contador + 1;

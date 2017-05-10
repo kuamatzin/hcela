@@ -4,7 +4,7 @@ namespace HerramientasCela\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MachineRequest extends FormRequest
+class ReplacementRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,10 @@ class MachineRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'type' => 'required|numeric',
             'description' => 'required',
-            'photo' => 'required',
-            'type' => 'required',
-            'machine_type' => 'required',
+            'image' => 'required',
+            'price' => 'required|numeric'
         ];
     }
 }
