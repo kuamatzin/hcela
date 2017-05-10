@@ -10,7 +10,6 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th></th>
                         <th>Tipo</th>
                         <th>Descripción</th>
                         <th>Imagen</th>
@@ -23,6 +22,10 @@
                     <tr>
                         <td>{{$refaccion->type}}</td>
                         <td>{{$refaccion->description}}</td>
+                        <td>
+                            <img src="{{$refaccion->image}}" alt="" class="img-responsive">
+                        </td>
+                        <td>{{$refaccion->price}}</td>
                     </tr>
                     @endforeach
                 </tbody>
