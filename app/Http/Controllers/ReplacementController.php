@@ -26,6 +26,6 @@ class ReplacementController extends Controller
         $request['image'] = $file;
         Replacement::create($request->all());
 
-        return redirect('refacciones');
+        return redirect('refacciones/create');
     }
 }
