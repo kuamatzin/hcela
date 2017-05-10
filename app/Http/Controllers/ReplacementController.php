@@ -12,7 +12,8 @@ class ReplacementController extends Controller
 
     public function index()
     {
-        return view('replacements.index');
+        $refacciones = Replacement::all();
+        return view('replacements.index', compact('refacciones'));
     }
 
     public function create()
