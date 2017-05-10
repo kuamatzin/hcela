@@ -23,7 +23,7 @@
                         <td>{{$refaccion->type}}</td>
                         <td>{{$refaccion->description}}</td>
                         <td>
-                            <img src="{{$refaccion->image}}" alt="" class="img-responsive">
+                            <img src="/{{$refaccion->image}}" alt="" class="img-responsive">
                         </td>
                         <td>{{$refaccion->price}}</td>
                     </tr>
