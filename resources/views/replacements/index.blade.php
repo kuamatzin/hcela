@@ -26,10 +26,40 @@
                             <img src="/{{$refaccion->image}}" alt="" class="img-responsive">
                         </td>
                         <td>{{$refaccion->price}}</td>
+                        <td>
+                            <button type="button" class="btn btn-danger" v-on:click="borrar({{$refaccion->id}})">Borrar</button>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+<script>
+    window.Laravel = { csrfToken: '{{ csrf_token() }}' };
+    var vm = new Vue({
+        el: "#app",
+        methods: {
+            borrar: function(id){
+                var that = this;
+                 swal({   title: "¿Estás seguro de eliminar?",   text: "Ya no será visible en la página",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",  cancelButtonText: "Cancelar", confirmButtonText: "Estoy seguro",   closeOnConfirm: false }, function(){ that.eliminar(id) });
+            },
+            eliminar: function(id){
+                this.$http.delete('/refacciones/' + id).then(function(response){
+                    if (response.status == 200) {
+                        location.reload();
+                    }
+                    else {
+                        swal("Intente borrar de nuevo")
+                    }
+                }, function(error){
+                    swal("Intente borrar de nuevo")
+                });
+            }
+        }
+    })
+</script>
 @endsection

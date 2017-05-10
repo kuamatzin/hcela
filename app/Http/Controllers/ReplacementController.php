@@ -29,4 +29,9 @@ class ReplacementController extends Controller
 
         return redirect('refacciones/create');
     }
+
+    public function destroy($id)
+    {
+        Replacement::destroy($id);
+    }
 }
