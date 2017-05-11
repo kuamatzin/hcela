@@ -229,6 +229,7 @@
             </div>
         </div>
     </div>
+
     <div id="project-modal-3" class="project-modal modal modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="projectModal3Label">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -240,7 +241,7 @@
                     <div class="content">
                         <div class="row">
                             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                                <div class="panel panel-default">
+                                <div class="panel panel-primary">
                                     <div class="panel-heading" role="tab" id="headingOne">
                                         <h4 class="panel-title">
                                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -264,7 +265,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="panel panel-default">
+                                <div class="panel panel-primary">
                                     <div class="panel-heading" role="tab" id="headingTwo">
                                         <h4 class="panel-title">
                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -278,7 +279,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="panel panel-default">
+                                <div class="panel panel-primary">
                                     <div class="panel-heading" role="tab" id="headingThree">
                                         <h4 class="panel-title">
                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
