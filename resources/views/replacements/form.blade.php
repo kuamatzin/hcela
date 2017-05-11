@@ -10,12 +10,24 @@
     <small class="text-danger">{{ $errors->first('description') }}</small>
 </div>
 
+@if(isset($replacement))
+<img src="/{{$replacement->image}}" alt="" class="img-responsive" width="300px">
+
+<div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
+    {!! Form::label('image', 'Imagen') !!}
+    {!! Form::file('image') !!}
+    <p class="help-block">Adjunta una imagen para remplazar imagen actual</p>
+    <small class="text-danger">{{ $errors->first('image') }}</small>
+</div>
+@else
 <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
     {!! Form::label('image', 'Imagen') !!}
     {!! Form::file('image', ['required' => 'required']) !!}
     <p class="help-block">Adjunta una imagen</p>
     <small class="text-danger">{{ $errors->first('image') }}</small>
 </div>
+@endif
+
 
 
 <div class="form-group">

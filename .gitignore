@@ -1,6 +1,7 @@
 /node_modules
 /public/storage
 /public/machines_photos
+/public/replacements
 /vendor
 /.idea
 Homestead.json

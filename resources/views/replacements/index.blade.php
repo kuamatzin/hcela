@@ -12,7 +12,6 @@
                     <tr>
                         <th>Tipo</th>
                         <th>Descripción</th>
-                        <th>Image Text</th>
                         <th>Imagen</th>
                         <th>Precio</th>
                         <th>Eliminar</th>
@@ -24,10 +23,12 @@
                         <td>{{$refaccion->type}}</td>
                         <td>{{$refaccion->description}}</td>
                         <td>
-                            <img src="/{{$refaccion->image}}" alt="" class="img-responsive">
+                            <img src="/{{$refaccion->image}}" alt="" class="img-responsive" width="300px">
                         </td>
                         <td>{{$refaccion->price}}</td>
-                        <td>{{$refaccion->image}}</td>
+                        <td>
+                            <a href="/refacciones/{{$refaccion->id}}/edit" class="btn btn-warning">Editar</a>
+                        </td>
                         <td>
                             <button type="button" class="btn btn-danger" v-on:click="borrar({{$refaccion->id}})">Borrar</button>
                         </td>
