@@ -14,6 +14,8 @@ class ReplacementController extends Controller
 
     public function index()
     {
+        $refacciones = Replacement::lijadora()->get();
+        return $refacciones;
         $refacciones = Replacement::all();
         return view('replacements.index', compact('refacciones'));
     }

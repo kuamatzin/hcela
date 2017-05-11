@@ -97,8 +97,7 @@
                             <div class="info-mask">
                                 <div class="mask-inner">
                                     <h4 class="title">Refacciones y accesorios</h4>
-                                    <div class="desc">Project intro goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor...</div>
-                                    <a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#project-modal-3">View Details</a>
+                                    <a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#project-modal-3">Ver Catálogo</a>
                                     <a class="link" href="#" data-toggle="modal" data-target="#project-modal-3"></a>
                                 </div>
                             </div>

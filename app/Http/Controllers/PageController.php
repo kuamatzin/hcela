@@ -4,6 +4,7 @@ namespace HerramientasCela\Http\Controllers;
 
 use HerramientasCela\Machine;
 use HerramientasCela\Mail\ContactoMail;
+use HerramientasCela\Replacement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Mail;
@@ -35,7 +36,10 @@ class PageController extends Controller
         $cintas = Machine::where('machine_type', 10)->orderBy('position')->get();
         $husillos = Machine::where('machine_type', 11)->orderBy('position')->get();
         $sargentos = Machine::where('machine_type', 12)->orderBy('position')->get();
-        return view('page.index',  compact('mandriles', 'trompos', 'tornillos', 'escuadradoras', 'circulares', 'trompos_herramientas', 'lijadoras', 'tornos', 'escoplos', 'cintas', 'husillos', 'sargentos', 'carrito'));
+
+        $refacciones_mandril = Replacement::mandril()->get();
+
+        return view('page.index',  compact('mandriles', 'trompos', 'tornillos', 'escuadradoras', 'circulares', 'trompos_herramientas', 'lijadoras', 'tornos', 'escoplos', 'cintas', 'husillos', 'sargentos', 'carrito', 'refacciones_mandril'));
     }
 
     public function enviar_email(Request $request)
