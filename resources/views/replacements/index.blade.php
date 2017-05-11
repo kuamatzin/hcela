@@ -12,6 +12,7 @@
                     <tr>
                         <th>Tipo</th>
                         <th>Descripción</th>
+                        <th>Image Text</th>
                         <th>Imagen</th>
                         <th>Precio</th>
                         <th>Eliminar</th>
@@ -26,6 +27,7 @@
                             <img src="/{{$refaccion->image}}" alt="" class="img-responsive">
                         </td>
                         <td>{{$refaccion->price}}</td>
+                        <td>{{$refaccion->image}}</td>
                         <td>
                             <button type="button" class="btn btn-danger" v-on:click="borrar({{$refaccion->id}})">Borrar</button>
                         </td>
