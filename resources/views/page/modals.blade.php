@@ -327,9 +327,9 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Product</th>
+                                        <th>Producto</th>
                                         <th></th>
-                                        <th class="text-center">Price</th>
+                                        <th class="text-center">Precio</th>
                                         <th class="text-center">Total</th>
                                         <th> </th>
                                     </tr>
@@ -338,10 +338,10 @@
                                     <tr v-for="maquina in carrito_compra">
                                         <td class="col-sm-8 col-md-6">
                                             <div class="media">
-                                                <a class="thumbnail pull-left" href="#"> <img class="media-object" v-bind:src="maquina.photos[0]" style="width: 72px; height: 72px;"> </a>
+                                                <a class="thumbnail pull-left" href="#"> <img class="media-object" v-bind:src="maquina.image" style="width: 72px; height: 72px;"> </a>
                                                 <div class="media-body">
                                                     <h4 class="media-heading"><a href="#">
-                                                    @{{maquina.name}}</a></h4>
+                                                    @{{maquina.description}}</a></h4>
                                                     <!--
                                                     <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
                                                     <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
@@ -392,11 +392,11 @@
                                             <td>   </td>
                                             <td>
                                                 <button type="button" class="btn btn-default">
-                                                <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                                                <span class="glyphicon glyphicon-shopping-cart"></span> Continuar comprando
                                             </button></td>
                                             <td>
                                                 <button type="button" class="btn btn-success">
-                                                Checkout <span class="glyphicon glyphicon-play"></span>
+                                                Pagar <span class="glyphicon glyphicon-play"></span>
                                             </button></td>
                                         </tr>
                                     </tbody>
@@ -404,10 +404,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
