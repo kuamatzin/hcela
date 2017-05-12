@@ -37,9 +37,19 @@ class PageController extends Controller
         $husillos = Machine::where('machine_type', 11)->orderBy('position')->get();
         $sargentos = Machine::where('machine_type', 12)->orderBy('position')->get();
 
-        $refacciones_mandril = Replacement::mandril()->get();
+        $refacciones = [
+            'Mandriles' => $refacciones_mandril = Replacement::mandril()->get(),
+            'Trompo Botella' => $refacciones_mandril = Replacement::trompoBotella()->get(),
+            'Sierra Cinta' => $refacciones_mandril = Replacement::sierraCinta()->get(),
+            'Torno' => $refacciones_mandril = Replacement::torno()->get(),
+            'Escoplo' => $refacciones_mandril = Replacement::escoplo()->get(),
+            'Lijadora' => $refacciones_mandril = Replacement::lijadora()->get(),
+            'Trompo' => $refacciones_mandril = Replacement::trompo()->get(),
+            'Sierra Circular y Escuadradora' => $refacciones_mandril = Replacement::sierraCircularEscuadradora()->get(),
+            'Motor' => $refacciones_mandril = Replacement::motor()->get()
+        ];
 
-        return view('page.index',  compact('mandriles', 'trompos', 'tornillos', 'escuadradoras', 'circulares', 'trompos_herramientas', 'lijadoras', 'tornos', 'escoplos', 'cintas', 'husillos', 'sargentos', 'carrito', 'refacciones_mandril'));
+        return view('page.index',  compact('mandriles', 'trompos', 'tornillos', 'escuadradoras', 'circulares', 'trompos_herramientas', 'lijadoras', 'tornos', 'escoplos', 'cintas', 'husillos', 'sargentos', 'carrito', 'refacciones'));
     }
 
     public function enviar_email(Request $request)

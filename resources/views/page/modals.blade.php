@@ -241,58 +241,38 @@
                     <div class="content">
                         <div class="row">
                             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                @foreach($refacciones as $key => $refaccion_tipo)
                                 <div class="panel panel-primary">
-                                    <div class="panel-heading" role="tab" id="headingOne">
-                                        <h4 class="panel-title">
-                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Mandriles
-                                        </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                        <div class="panel-body">
-                                            @foreach($refacciones_mandril->chunk(4) as $chunk)
-                                                <div class="row">
-                                                    @foreach ($chunk as $refaccion)
-                                                        <div class="col-xs-3">
-                                                            <img src="{{$refaccion->image}}" alt="" class="img-responsive">
-                                                            <p class="text-center">{{ $refaccion->description }} - <span style="color: #2566B4; font-weight: bold">${{$refaccion->price}}</span></p>
-                                                            <button type="button" class="center-block btn btn-link">Agregar al carrito</button>
-                                                            </div>
-                                                    @endforeach
-                                                </div>   
-                                            @endforeach
+                                        <div class="panel-heading" role="tab" id="headingOne">
+                                            <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{$key}}"
+                                            @if($key == 'Mandriles')
+                                                aria-expanded="true"
+                                            @else
+                                                aria-expanded="false"
+                                            @endif
+                                            aria-controls="{{$key}}">
+                                            {{$key}}
+                                            </a>
+                                            </h4>
+                                        </div>
+                                        <div id="{{$key}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="panel-body">
+                                                @foreach($refaccion_tipo->chunk(4) as $chunk)
+                                                    <div class="row">
+                                                        @foreach ($chunk as $refaccion)
+                                                            <div class="col-xs-3">
+                                                                <img src="{{$refaccion->image}}" alt="" class="img-responsive">
+                                                                <p class="text-center">{{ $refaccion->description }} - <span style="color: #2566B4; font-weight: bold">${{$refaccion->price}}</span></p>
+                                                                <button type="button" class="center-block btn btn-link">Agregar al carrito</button>
+                                                                </div>
+                                                        @endforeach
+                                                    </div>   
+                                                @endforeach
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading" role="tab" id="headingTwo">
-                                        <h4 class="panel-title">
-                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Collapsible Group Item #2
-                                        </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                        <div class="panel-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading" role="tab" id="headingThree">
-                                        <h4 class="panel-title">
-                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Collapsible Group Item #3
-                                        </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                        <div class="panel-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
