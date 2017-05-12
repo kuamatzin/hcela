@@ -28,7 +28,6 @@
         el: "#app",
         data: {
             active_machine: '',
-            pago: false,
             errors: '',
             name: '',
             email: '',
@@ -47,7 +46,8 @@
             card_expMonth: '',
             boton_pagar: true,
             boton_procesando_pago: false,
-            carrito_compra: {!! $carrito !!}
+            carrito_compra: {!! $carrito !!},
+            total_price: {!! $carrito->sum('price') !!}
         },
         methods: {
             setActiveMachine: function(maquina){
@@ -136,6 +136,7 @@
                 })
             },
             agregar_carrito: function(machine){
+                var that = this;
                 var comprobar = false;
                 for (var i = this.carrito_compra.length - 1; i >= 0; i--) {
                     if (machine.id == this.carrito_compra[i].id) {
@@ -146,6 +147,7 @@
                 if (!comprobar) {
                     this.carrito_compra.push(machine);
                     this.$http.post('/guardarCarritoCompra', {machine: machine.id}).then((response) => {
+                        that.total_price = response.data.total_price;
                     }, (response) => {
                     });
                 }
@@ -154,6 +156,7 @@
                 }
             },
             quitar_carrito: function(machine){
+                var that = this;
                 for (var i = this.carrito_compra.length - 1; i >= 0; i--) {
                     if (machine.id == this.carrito_compra[i].id) {
                         this.carrito_compra.splice(i, 1);
@@ -163,6 +166,7 @@
                     }
                 }
                 this.$http.post('/quitarCarritoCompra', {machine: machine.id}).then((response) => {
+                    that.total_price = response.data.total_price;
                 }, (response) => {
                 });
             },

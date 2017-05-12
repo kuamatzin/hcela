@@ -91,8 +91,12 @@ class PageController extends Controller
         else {
             $carrito = $request->machine;
         }
+
+        //Sumatoria de precios
+
+        $total_price = Replacement::find( explode(',', $carrito))->sum('price');
         
-        return response()->json(['previousCookieValue' => Cookie::get('carrito')])->withCookie(cookie('carrito', $carrito));
+        return response()->json(['previousCookieValue' => Cookie::get('carrito'), 'total_price' => $total_price])->withCookie(cookie('carrito', $carrito));
     }
 
     public function quitarArticuloCarritoComptra(Request $request)
@@ -104,7 +108,8 @@ class PageController extends Controller
         if(($key = array_search($request->machine, $carrito)) !== false) {
             unset($carrito[$key]);
         }
+        $total_price = Replacement::find( $carrito)->sum('price');
 
-        return response()->json(['previousCookieValue' => Cookie::get('carrito')])->withCookie(cookie('carrito', $carrito));
+        return response()->json(['previousCookieValue' => Cookie::get('carrito'), 'total_price' => $total_price])->withCookie(cookie('carrito', $carrito));
     }
 }
