@@ -241,24 +241,24 @@
                     <div class="content">
                         <div class="row">
                             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                                @foreach($refacciones as $key => $refaccion_tipo)
+                                @for ($i = 0; $i < sizeof($refacciones) - 1; $i++)
                                 <div class="panel panel-primary">
-                                        <div class="panel-heading" role="tab" id="headingOne">
+                                        <div class="panel-heading" role="tab" id="col_{{$i}}">
                                             <h4 class="panel-title">
-                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{$key}}"
-                                            @if($key == 'Mandriles')
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$i}}"
+                                            @if($i == 0)
                                                 aria-expanded="true"
                                             @else
                                                 aria-expanded="false"
                                             @endif
-                                            aria-controls="{{$key}}">
-                                            {{$key}}
+                                            aria-controls="collapse{{$i}}">
+                                            {{$keys[$i]}}
                                             </a>
                                             </h4>
                                         </div>
-                                        <div id="{{$key}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                        <div id="collapse{{$i}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="col_{{$i}}">
                                             <div class="panel-body">
-                                                @foreach($refaccion_tipo->chunk(4) as $chunk)
+                                                @foreach($refacciones[$keys[$i]]->chunk(4) as $chunk)
                                                     <div class="row">
                                                         @foreach ($chunk as $refaccion)
                                                             <div class="col-xs-3">
@@ -272,7 +272,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
+                                @endfor
                             </div>
                         </div>
                     </div>

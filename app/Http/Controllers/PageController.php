@@ -49,7 +49,9 @@ class PageController extends Controller
             'Motor' => $refacciones_mandril = Replacement::motor()->get()
         ];
 
-        return view('page.index',  compact('mandriles', 'trompos', 'tornillos', 'escuadradoras', 'circulares', 'trompos_herramientas', 'lijadoras', 'tornos', 'escoplos', 'cintas', 'husillos', 'sargentos', 'carrito', 'refacciones'));
+        $keys = array_keys($refacciones);
+
+        return view('page.index',  compact('mandriles', 'trompos', 'tornillos', 'escuadradoras', 'circulares', 'trompos_herramientas', 'lijadoras', 'tornos', 'escoplos', 'cintas', 'husillos', 'sargentos', 'carrito', 'refacciones', 'keys'));
     }
 
     public function enviar_email(Request $request)
