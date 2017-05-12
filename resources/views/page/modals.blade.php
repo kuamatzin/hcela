@@ -248,7 +248,7 @@ content -->
     </div>
 </div>
 </div>
-<div class="modal fade" id="carrito">
+<div class="project-modal modal modal-fullscreen" tabindex="-1" role="dialog" id="carrito">
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
@@ -259,57 +259,59 @@ content -->
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Producto</th>
-                                    <th></th>
-                                    <th class="text-center">Precio</th>
-                                    <th class="text-center">Total</th>
-                                    <th> </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="maquina in carrito_compra">
-                                    <td class="col-sm-8 col-md-6">
-                                        <div class="media">
-                                            <a class="thumbnail pull-left" href="#"> <img class="media-object" v-bind:src="maquina.image" style="width: 72px; height: 72px;"> </a>
-                                            <div class="media-body">
-                                                <h4 class="media-heading"><a href="#">
-                                                @{{maquina.description}}</a></h4>
-                                            </div>
-                                        </div></td>
-                                        <td class="col-sm-1 col-md-1" style="text-align: center">
-                                        </td>
-                                        <td class="col-sm-1 col-md-1 text-center"><strong>
-                                            $@{{maquina.price}}
-                                        </strong></td>
-                                        <td class="col-sm-1 col-md-1 text-center"><strong>
-                                            $@{{maquina.price}}
-                                        </strong></td>
-                                        <td class="col-sm-1 col-md-1">
-                                            <button type="button" class="btn btn-danger" v-on:click="quitar_carrito(maquina)">
-                                            <span class="glyphicon glyphicon-trash"></span>
-                                        </button></td>
-                                    </tr>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
                                     <tr>
-                                        <td>   </td>
-                                        <td>   </td>
-                                        <td>   </td>
-                                        <td><h3>Total</h3></td>
-                                        <td class="text-right">
-                                            <h3>
-                                                <strong>$@{{total_price.toFixed(2)}}</strong>
-                                            </h3>
-                                        </td>
+                                        <th>Producto</th>
+                                        <th></th>
+                                        <th class="text-center">Precio</th>
+                                        <th class="text-center">Total</th>
+                                        <th> </th>
                                     </tr>
-                                    <tr>
-                                        <td>   </td>
-                                        <td>   </td>
-                                        <td>   </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="maquina in carrito_compra">
+                                        <td class="col-sm-8 col-md-6">
+                                            <div class="media">
+                                                <a class="thumbnail pull-left" href="#"> <img class="media-object" v-bind:src="maquina.image" style="width: 72px; height: 72px;"> </a>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading"><a href="#">
+                                                    @{{maquina.description}}</a></h4>
+                                                </div>
+                                            </div></td>
+                                            <td class="col-sm-1 col-md-1" style="text-align: center">
+                                            </td>
+                                            <td class="col-sm-1 col-md-1 text-center"><strong>
+                                                $@{{maquina.price}}
+                                            </strong></td>
+                                            <td class="col-sm-1 col-md-1 text-center"><strong>
+                                                $@{{maquina.price}}
+                                            </strong></td>
+                                            <td class="col-sm-1 col-md-1">
+                                                <button type="button" class="btn btn-danger" v-on:click="quitar_carrito(maquina)">
+                                                <span class="glyphicon glyphicon-trash"></span>
+                                            </button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>   </td>
+                                            <td>   </td>
+                                            <td>   </td>
+                                            <td><h3>Total</h3></td>
+                                            <td class="text-right">
+                                                <h3>
+                                                    <strong>$@{{total_price.toFixed(2)}}</strong>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>   </td>
+                                            <td>   </td>
+                                            <td>   </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </div>
                         </div>
                         <div  class="col-md-4">
                             <div class="panel panel-default">
