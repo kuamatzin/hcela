@@ -22,7 +22,7 @@ class PageController extends Controller
         else {
             $carrito = [];
         }
-        $carrito = Machine::find($carrito);
+        $carrito = Replacement::find($carrito);
 
         $mandriles = Machine::where('machine_type', 1)->orderBy('position')->get();
         $trompos = Machine::where('machine_type', 2)->orderBy('position')->get();

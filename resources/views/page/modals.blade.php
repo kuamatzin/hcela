@@ -264,7 +264,7 @@
                                                             <div class="col-xs-3">
                                                                 <img src="{{$refaccion->image}}" alt="" class="img-responsive">
                                                                 <p class="text-center">{{ $refaccion->description }} - <span style="color: #2566B4; font-weight: bold">${{$refaccion->price}}</span></p>
-                                                                <button type="button" class="center-block btn btn-link">Agregar al carrito</button>
+                                                                <button type="button" class="center-block btn btn-link" v-on:click="agregar_carrito({{$refaccion}})">Agregar al carrito</button>
                                                                 </div>
                                                         @endforeach
                                                     </div>   
