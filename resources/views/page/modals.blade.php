@@ -338,7 +338,7 @@
                                     <tr v-for="maquina in carrito_compra">
                                         <td class="col-sm-8 col-md-6">
                                             <div class="media">
-                                                <a class="thumbnail pull-left" href="#"> <img class="media-object" v-bind:src="maquina.image" style="width: 72px; height: 72px;"> </a>
+                                                <a class="thumbnail pull-left" href="#"> <img class="media-object" v-bind:src="maquina.image" style="width: 120px; height: 120px;"> </a>
                                                 <div class="media-body">
                                                     <h4 class="media-heading"><a href="#">
                                                     @{{maquina.description}}</a></h4>
