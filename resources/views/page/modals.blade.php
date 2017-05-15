@@ -264,43 +264,49 @@ content -->
                                 <thead>
                                     <tr>
                                         <th>Producto</th>
-                                        <th></th>
+                                        <th class="text-center">Cantidad</th>
                                         <th class="text-center">Precio</th>
-                                        <th class="text-center">Total</th>
-                                        <th> </th>
+                                        <th>Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr v-for="maquina in carrito_compra">
-                                        <td class="col-sm-8 col-md-6">
+                                        <td>
                                             <div class="media">
                                                 <a class="thumbnail pull-left" href="#"> <img class="media-object" v-bind:src="maquina.image" style="width: 72px; height: 72px;"> </a>
                                                 <div class="media-body">
                                                     <h4 class="media-heading"><a href="#">
                                                     @{{maquina.description}}</a></h4>
                                                 </div>
-                                            </div></td>
-                                            <td class="col-sm-1 col-md-1" style="text-align: center">
-                                            </td>
-                                            <td class="col-sm-1 col-md-1 text-center"><strong>
+                                            </div>
+                                        </td>
+                                        <td style="text-align: center">
+                                                <select name="cantidad" id="inputCantidad" class="form-control" v-model="cantidad[$index]" v-on:change="updatePrice(cantidad[$index], $index)">
+                                                    <option value="1" selected>1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                         </td>
+                                        <td><strong>
                                                 $@{{maquina.price}}
-                                            </strong></td>
-                                            <td class="col-sm-1 col-md-1 text-center"><strong>
-                                                $@{{maquina.price}}
-                                            </strong></td>
-                                            <td class="col-sm-1 col-md-1">
+                                            </strong>
+                                        </td>
+
+                                        <td>
                                                 <button type="button" class="btn btn-danger" v-on:click="quitar_carrito(maquina)">
                                                 <span class="glyphicon glyphicon-trash"></span>
-                                            </button></td>
+                                            </button>
+                                        </td>
                                         </tr>
                                         <tr>
-                                            <td>   </td>
                                             <td>   </td>
                                             <td>   </td>
                                             <td><h3>Total</h3></td>
                                             <td class="text-right">
                                                 <h3>
-                                                    <strong>$@{{total_price.toFixed(2)}}</strong>
+                                                    <strong>$@{{ total_price.toFixed(2)}}</strong>
                                                 </h3>
                                             </td>
                                         </tr>

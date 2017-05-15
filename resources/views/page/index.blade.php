@@ -47,6 +47,9 @@
             boton_pagar: true,
             boton_procesando_pago: false,
             carrito_compra: {!! $carrito !!},
+            cantidad: [],
+            visita: 0,
+            subtotales: new Array({!! count($carrito) !!}).fill(0),
             total_price: {!! $carrito->sum('price') !!}
         },
         methods: {
@@ -83,7 +86,8 @@
                 /* Después de tener una respuesta exitosa, envía la información al servidor */
                 successResponseHandler = function(token) {
                     // POST /someUrl
-                    that.$http.post('/processPayment', {token: token.id, product: that.active_machine.id, buyer_name: that.card_name, buyer_email: 'kuamatzin@gmail.com'}, {before : function(){
+                    console.log(token)
+                    that.$http.post('/processPayment', {token: token.id, products: that.carrito_compra, buyer_name: that.card_name, buyer_email: 'kuamatzin@gmail.com'}, {before : function(){
                         that.boton_pagar = false;
                         that.boton_procesando_pago = true;
                     }}).then((response) => {
@@ -169,6 +173,24 @@
                     that.total_price = response.data.total_price;
                 }, (response) => {
                 });
+            },
+            updatePrice: function(cantidad, index){
+                if (this.visita == 0) {
+                    this.inicializarSubtotales();
+                    this.visita = 2;
+                }
+                this.subtotales[index] = this.carrito_compra[index].price * cantidad;
+                let price = 0;
+                for (var i = this.subtotales.length - 1; i >= 0; i--) {
+                    price = price + this.subtotales[i];
+
+                }
+                this.total_price = price;
+            },
+            inicializarSubtotales: function(){
+                for (var i = this.subtotales.length - 1; i >= 0; i--) {
+                    this.subtotales[i] = parseInt(this.carrito_compra[i].price);
+                }
             },
             mostrarCarrito: function(){
                 if (this.carrito_compra.length > 0) {

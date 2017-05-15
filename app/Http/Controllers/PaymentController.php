@@ -3,6 +3,7 @@
 namespace HerramientasCela\Http\Controllers;
 
 use HerramientasCela\Machine;
+use HerramientasCela\Replacement;
 use Illuminate\Http\Request;
 use \Conekta as Conekta;
 use \Conekta_Charge as Conekta_Charge;
@@ -12,7 +13,10 @@ class PaymentController extends Controller
 {
     public function processPayment(Request $request)
     {
-        $product = Machine::findOrfail($request->product);
+        $products = $request->products;
+        $ids_products = array_pluck($products, 'id');
+        $refacciones = Replacement::find($ids_products);
+
         Conekta::setApiKey("key_Gfo2v2sj9gqnKAZbBttuaA");
         try {
             $charge = Conekta_Charge::create(array(
