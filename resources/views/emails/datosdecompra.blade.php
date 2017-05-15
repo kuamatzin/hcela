@@ -127,7 +127,7 @@
                                         <td style="{{ $fontFamily }} {{ $style['email-footer_cell'] }}">
                                             <p style="{{ $style['paragraph-sub'] }}">
                                                 &copy; {{ date('Y') }}
-                                                <a style="{{ $style['anchor'] }}" href="{{ url('/') }}" target="_blank">Pokepizzas</a>.
+                                                <a style="{{ $style['anchor'] }}" href="{{ url('/') }}" target="_blank">HerramientasCela</a>.
                                                 Todos los derechos reservados.
                                             </p>
                                         </td>

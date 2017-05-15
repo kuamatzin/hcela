@@ -6,6 +6,7 @@ use HerramientasCela\Machine;
 use HerramientasCela\Mail\DatosDeCompra;
 use HerramientasCela\Replacement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Mail;
 use \Conekta as Conekta;
 use \Conekta_Charge as Conekta_Charge;
@@ -65,7 +66,11 @@ class PaymentController extends Controller
             return response()->json(['status' => $e->message_to_purchaser], 400);
         }
 
+        //Enviar email al comprador
         Mail::to($request->buyer_email)->send(new DatosDeCompra($amount, $refacciones));
+
+        //Eliminar carrito de compra de cookies
+        Cookie::queue(Cookie::forget('carrito'));
 
         return response()->json(['status' => $charge->status], 200);
     }

@@ -91,6 +91,8 @@
                         that.boton_pagar = false;
                         that.boton_procesando_pago = true;
                     }}).then((response) => {
+                        that.carrito_compra = [];
+                        $('#carrito').modal('hide');
                         that.boton_pagar = true;
                         that.boton_procesando_pago = false;
                         if (response.status == 400) {

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Cookie;
+
 Route::get('/', 'PageController@index');
 
 Route::post('processPayment', 'PaymentController@processPayment');
