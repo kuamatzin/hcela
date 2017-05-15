@@ -330,6 +330,14 @@ content -->
                                     <form role="form" v-on:submit.prevent="paymentConekta">
                                         <div class="form-group">
                                             <label for="cardNumber">
+                                            EMAIL</label>
+                                            <div class="">
+                                                <input type="email" class="form-control" id="cardName" placeholder="Email"
+                                                required autofocus v-model="email_pay"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cardNumber">
                                             NOMBRE EN TARJETA</label>
                                             <div class="">
                                                 <input type="text" class="form-control" id="cardName" placeholder="Nombre en Tarjeta"

@@ -86,8 +86,8 @@
                 /* Después de tener una respuesta exitosa, envía la información al servidor */
                 successResponseHandler = function(token) {
                     // POST /someUrl
-                    console.log(token)
-                    that.$http.post('/processPayment', {token: token.id, products: that.carrito_compra, buyer_name: that.card_name, buyer_email: 'kuamatzin@gmail.com'}, {before : function(){
+                    console.log(that.cantidad)
+                    that.$http.post('/processPayment', {token: token.id, products: that.carrito_compra, buyer_name: that.card_name, buyer_email: that.email_pay, cantidades: that.cantidad}, {before : function(){
                         that.boton_pagar = false;
                         that.boton_procesando_pago = true;
                     }}).then((response) => {
