@@ -152,6 +152,7 @@
                     this.carrito_compra.push(machine);
                     this.$http.post('/guardarCarritoCompra', {machine: machine.id}).then((response) => {
                         that.total_price = response.data.total_price;
+                        swal({   title: "Refacción agregada al carrito de compra",   text: "",   timer: 1500,   showConfirmButton: true });
                     }, (response) => {
                     });
                 }
