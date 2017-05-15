@@ -82,7 +82,7 @@
                                                         <tr>
                                                             <td>
                                                                 <div class="media">
-                                                                    <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://herramientas.dev/{{$item->image}}" style="width: 72px; height: 72px;"> </a>
+                                                                    <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://www.hcela.inovuz.com/{{$item->image}}" style="width: 72px; height: 72px;"> </a>
                                                                     <div class="media-body">
                                                                         <h4 class="media-heading"><a href="#">
                                                                         {{$item->description}}</a></h4>
