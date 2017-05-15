@@ -265,7 +265,7 @@ content -->
                                     <tr>
                                         <th>Producto</th>
                                         <th class="text-center">Cantidad</th>
-                                        <th class="text-center">Precio</th>
+                                        <th class="text-center">Precio Unitario</th>
                                         <th>Eliminar</th>
                                     </tr>
                                 </thead>
