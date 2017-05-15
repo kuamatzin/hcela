@@ -46,10 +46,6 @@ class PaymentController extends Controller
         $items = $this->getItems($refacciones, $cantidades);
         $amount = $this->getAmount($refacciones, $cantidades);
 
-        Mail::to($request->buyer_email)->send(new DatosDeCompra($amount, $refacciones, $amount));
-
-        return 0;
-
         Conekta::setApiKey("key_Gfo2v2sj9gqnKAZbBttuaA");
         try {
             $charge = Conekta_Charge::create(array(
@@ -69,7 +65,7 @@ class PaymentController extends Controller
             return response()->json(['status' => $e->message_to_purchaser], 400);
         }
 
-        Mail::to($request->buyer_email)->send(new DatosDeCompra($amount, $items, $amount));
+        Mail::to($request->buyer_email)->send(new DatosDeCompra($amount, $refacciones));
 
         return response()->json(['status' => $charge->status], 200);
     }
