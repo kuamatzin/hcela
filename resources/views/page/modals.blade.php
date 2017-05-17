@@ -198,7 +198,7 @@
                                             @foreach ($chunk as $refaccion)
                                             <div class="col-xs-3">
                                                 <img src="{{$refaccion->image}}" alt="" class="img-responsive">
-                                                <p class="text-center">{{ $refaccion->description }} - <span style="color: #2566B4; font-weight: bold">${{$refaccion->price}}</span></p>
+                                                <p class="text-center">{{$refaccion->name}} - {{ $refaccion->description }} - <span style="color: #2566B4; font-weight: bold">${{$refaccion->price}}</span></p>
                                                 <button type="button" class="center-block btn btn-link" v-on:click="agregar_carrito({{$refaccion}})">Agregar al carrito</button>
                                             </div>
                                             @endforeach
