@@ -176,7 +176,7 @@
                 <div class="content">
                     <div class="row">
                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                            @for ($i = 0; $i < sizeof($refacciones) - 1; $i++)
+                            @for ($i = 0; $i <= sizeof($refacciones) - 1; $i++)
                             <div class="panel panel-primary">
                                 <div class="panel-heading" role="tab" id="col_{{$i}}">
                                     <h4 class="panel-title">
