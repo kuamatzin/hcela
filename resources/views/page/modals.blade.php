@@ -295,7 +295,7 @@ content -->
                                         </td>
 
                                         <td>
-                                                <button type="button" class="btn btn-danger" v-on:click="quitar_carrito(maquina)">
+                                                <button type="button" class="btn btn-danger" v-on:click="quitar_carrito(maquina, $index)">
                                                 <span class="glyphicon glyphicon-trash"></span>
                                             </button>
                                         </td>

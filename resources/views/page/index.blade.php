@@ -153,7 +153,8 @@
                 if (!comprobar) {
                     this.carrito_compra.push(machine);
                     this.$http.post('/guardarCarritoCompra', {machine: machine.id}).then((response) => {
-                        that.total_price = response.data.total_price;
+                        that.subtotales.push(machine.price)
+                        this.updatePrice(1, that.subtotales.length - 1);
                         swal({   title: "Refacción agregada al carrito de compra",   text: "",   timer: 1500,   showConfirmButton: true });
                     }, (response) => {
                     });
@@ -162,7 +163,7 @@
                     swal("Este producto ya esta en tu carrito de compra")
                 }
             },
-            quitar_carrito: function(machine){
+            quitar_carrito: function(machine, index){
                 var that = this;
                 for (var i = this.carrito_compra.length - 1; i >= 0; i--) {
                     if (machine.id == this.carrito_compra[i].id) {
@@ -173,7 +174,8 @@
                     }
                 }
                 this.$http.post('/quitarCarritoCompra', {machine: machine.id}).then((response) => {
-                    that.total_price = response.data.total_price;
+                    console.log("Voy a restar maquina")
+                    that.updatePriceWhenMachineIsDeleted(index)
                 }, (response) => {
                 });
             },
@@ -185,13 +187,19 @@
                 this.subtotales[index] = this.carrito_compra[index].price * cantidad;
                 let price = 0;
                 for (var i = this.subtotales.length - 1; i >= 0; i--) {
-                    price = price + this.subtotales[i];
-
+                    console.log(this.subtotales[i])
+                    price = price + parseInt(this.subtotales[i]);
+                    console.log(price)
                 }
                 this.total_price = price;
             },
+            updatePriceWhenMachineIsDeleted(index){
+                this.total_price = this.total_price - this.subtotales[index];
+                this.subtotales.splice(index, 1);
+            },
             inicializarSubtotales: function(){
                 for (var i = this.subtotales.length - 1; i >= 0; i--) {
+                    console.log(this.subtotales[i])
                     this.subtotales[i] = parseInt(this.carrito_compra[i].price);
                 }
             },
