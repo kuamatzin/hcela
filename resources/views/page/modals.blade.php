@@ -256,9 +256,9 @@ content -->
             <h4 class="modal-title text-center">Mi carrito de compra</h4>
         </div>
         <div class="modal-body">
-            <div class="container">
+            <div class="container" style="width: 100%">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-8 col-sm-8 col-xs-8">
                         <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead>
@@ -299,27 +299,27 @@ content -->
                                                 <span class="glyphicon glyphicon-trash"></span>
                                             </button>
                                         </td>
-                                        </tr>
-                                        <tr>
-                                            <td>   </td>
-                                            <td>   </td>
-                                            <td><h3>Total</h3></td>
-                                            <td class="text-right">
-                                                <h3>
-                                                    <strong>$@{{ total_price.toFixed(2)}}</strong>
-                                                </h3>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>   </td>
-                                            <td>   </td>
-                                            <td>   </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                    </tr>
+                                    <tr>
+                                        <td>   </td>
+                                        <td>   </td>
+                                        <td><h3>Total</h3></td>
+                                        <td class="text-right">
+                                            <h3>
+                                                <strong>$@{{ total_price.toFixed(2)}}</strong>
+                                            </h3>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>   </td>
+                                        <td>   </td>
+                                        <td>   </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        </div>
-                        <div  class="col-md-4">
+                    </div>
+                        <div  class="col-md-4 col-sm-4 col-xs-4">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
@@ -327,6 +327,8 @@ content -->
                                     </h3>
                                 </div>
                                 <div class="panel-body">
+                                    <strong>* El costo del envío lo pagará usted directamente al momento de recibir el material</strong>
+                                    <br><br>
                                     <form role="form" v-on:submit.prevent="paymentConekta">
                                         <div class="form-group">
                                             <label for="cardNumber">
