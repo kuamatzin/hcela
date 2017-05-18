@@ -85,7 +85,7 @@
                                                                     <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://www.hcela.inovuz.com/{{$item->image}}" style="width: 72px; height: 72px;"> </a>
                                                                     <div class="media-body">
                                                                         <h4 class="media-heading"><a href="#">
-                                                                        {{$item->description}}</a></h4>
+                                                                        {{$item->nombre}} - {{$item->description}}</a></h4>
                                                                     </div>
                                                                 </div>
                                                             </td>
