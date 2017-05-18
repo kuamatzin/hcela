@@ -198,7 +198,7 @@
                                             @foreach ($chunk as $refaccion)
                                             <div class="col-xs-3">
                                                 <img src="{{$refaccion->image}}" alt="" class="img-responsive">
-                                                <p class="text-center">{{$refaccion->name}} - {{ $refaccion->description }} - <span style="color: #2566B4; font-weight: bold">${{$refaccion->price}}</span></p>
+                                                <p class="text-center">{{$refaccion->name}} - {{ $refaccion->description }} - <span style="color: #2566B4; font-weight: bold">${{number_format($refaccion->getOriginal('price')/100, 2)}}</span></p>
                                                 <button type="button" class="center-block btn btn-link" v-on:click="agregar_carrito({{$refaccion}})">Agregar al carrito</button>
                                             </div>
                                             @endforeach
@@ -290,7 +290,7 @@ content -->
                                                 </select>
                                          </td>
                                         <td><strong>
-                                                $@{{maquina.price}}
+                                                $@{{formatMoney(maquina.price)}}
                                             </strong>
                                         </td>
 
@@ -306,7 +306,7 @@ content -->
                                         <td><h3>Total</h3></td>
                                         <td class="text-right">
                                             <h3>
-                                                <strong>$@{{ total_price.toFixed(2)}}</strong>
+                                                <strong>$@{{formatMoney(total_price.toFixed(2))}}</strong>
                                             </h3>
                                         </td>
                                     </tr>

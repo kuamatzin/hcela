@@ -189,7 +189,6 @@
                 for (var i = this.subtotales.length - 1; i >= 0; i--) {
                     console.log(this.subtotales[i])
                     price = price + parseInt(this.subtotales[i]);
-                    console.log(price)
                 }
                 this.total_price = price;
             },
@@ -210,7 +209,10 @@
                 else {
                     swal("Aun no hay produtos en el carrito de compra");
                 }
-            }
+            },
+          formatMoney(money){
+              return money.replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+          }
         }
     })
 </script>
