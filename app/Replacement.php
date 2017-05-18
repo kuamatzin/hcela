@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Replacement extends Model
 {
-    protected $fillable = ['nombre', 'type', 'description', 'image', 'sellable', 'price'];
+    protected $fillable = ['name', 'type', 'description', 'image', 'sellable', 'price'];
 
     public function getPriceAttribute($value)
     {
