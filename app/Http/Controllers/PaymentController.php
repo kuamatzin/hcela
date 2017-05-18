@@ -18,7 +18,7 @@ class PaymentController extends Controller
       $items = [];
       foreach ($refacciones as $key => $refaccion) {
         $item = [
-          'name'=> $refaccion->description,
+          'name'=> $refaccion->name,
           'description'=> $refaccion->description,
           'unit_price'=> $refaccion->price,
           'quantity'=> $cantidades[$key]
