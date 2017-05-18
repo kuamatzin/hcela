@@ -4,6 +4,12 @@
     <small class="text-danger">{{ $errors->first('type') }}</small>
 </div>
 
+<div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
+    {!! Form::label('nombre', 'Nombre') !!}
+    {!! Form::text('nombre', null, ['class' => 'form-control', 'required' => 'required']) !!}
+    <small class="text-danger">{{ $errors->first('nombre') }}</small>
+</div>
+
 <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
     {!! Form::label('description', 'Descripción') !!}
     {!! Form::text('description', null, ['class' => 'form-control', 'required' => 'required']) !!}
