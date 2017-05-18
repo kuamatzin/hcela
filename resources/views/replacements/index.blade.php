@@ -11,6 +11,7 @@
                 <thead>
                     <tr>
                         <th>Tipo</th>
+                        <th>Nombre</th>
                         <th>Descripción</th>
                         <th>Imagen</th>
                         <th>Precio</th>
@@ -21,9 +22,10 @@
                     @foreach($refacciones as $key => $refaccion)
                     <tr>
                         <td>{{$refaccion->type}}</td>
+                        <td>{{$refaccion->name}}</td>
                         <td>{{$refaccion->description}}</td>
                         <td>
-                            <img src="/{{$refaccion->image}}" alt="" class="img-responsive" width="300px">
+                            <img src="/{{$refaccion->image}}" alt="" class="img-responsive" width="200px">
                         </td>
                         <td>{{$refaccion->price}}</td>
                         <td>

@@ -24,7 +24,7 @@
     {!! Form::file('image') !!}
     <p class="help-block">Adjunta una imagen para remplazar imagen actual</p>
     <small class="text-danger">{{ $errors->first('image') }}</small>
-</div>
+</div>p
 @else
 <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
     {!! Form::label('image', 'Imagen') !!}
