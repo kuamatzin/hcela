@@ -19,7 +19,7 @@ class PaymentController extends Controller
       foreach ($refacciones as $key => $refaccion) {
         $item = [
           'name'=> $refaccion->name,
-          'description'=> $refaccion->description,
+          'description'=> $refaccion->name,
           'unit_price'=> $refaccion->price,
           'quantity'=> $cantidades[$key]
         ];
