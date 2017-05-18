@@ -276,7 +276,7 @@ content -->
                                                 <a class="thumbnail pull-left" href="#"> <img class="media-object" v-bind:src="maquina.image" style="width: 72px; height: 72px;"> </a>
                                                 <div class="media-body">
                                                     <h4 class="media-heading"><a href="#">
-                                                    @{{maquina.description}}</a></h4>
+                                                            @{{maquina.name}} - @{{maquina.description}}</a></h4>
                                                 </div>
                                             </div>
                                         </td>
