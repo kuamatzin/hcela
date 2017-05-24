@@ -26,6 +26,9 @@
     window.Laravel = { csrfToken: '{{ csrf_token() }}' };
     var vm = new Vue({
         el: "#app",
+        ready(){
+            this.inicializarSubtotales();
+        },
         data: {
             active_machine: '',
             errors: '',
@@ -44,6 +47,7 @@
             card_cvc: '',
             card_expYear: '',
             card_expMonth: '',
+            email_pay: '',
             boton_pagar: true,
             boton_procesando_pago: false,
             carrito_compra: {!! $carrito !!},
