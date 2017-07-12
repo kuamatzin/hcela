@@ -42,6 +42,7 @@
                 <nav class="main-nav" role="navigation">
                     <div class="social-container">
                         <ul class="list-inline social-list">
+                        <!--
                             <li>
                                 <a href="#">
                                     <button type="button" class="btn btn-warning" v-on:click="mostrarCarrito">
@@ -49,6 +50,7 @@
                                     </button>
                                 </a>
                             </li>
+                            -->
                             <li>
                                 <a  target="_blank" href="https://www.youtube.com/channel/UC9psFkP6KZN43LyGM6bNXkQ" style="margin-top: 2px">
                                 <img src="img/youtube.png" alt="" class="img-responsive" width="60%">

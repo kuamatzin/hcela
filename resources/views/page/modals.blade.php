@@ -114,7 +114,9 @@
                     </div>
                     
                     <div class="review text-center">
+                        <!--
                         <button type="button" class="btn btn-primary" v-show="active_machine.sellable" v-on:click="agregar_carrito(active_machine)">Agregar al carrito de compra</button>
+                        -->
                         <a class="btn btn-primary btn-cta" v-show="!active_machine.sellable && !active_machine.user_guide" href="/users_guides/catalogo.pdf" download target="_blank">Descargar Catálogo</a>
                     </div>
                     
@@ -198,8 +200,8 @@
                                             @foreach ($chunk as $refaccion)
                                             <div class="col-xs-3">
                                                 <img src="{{$refaccion->image}}" alt="" class="img-responsive">
-                                                <p class="text-center">{{$refaccion->name}} - {{ $refaccion->description }} - <span style="color: #2566B4; font-weight: bold">${{number_format($refaccion->getOriginal('price')/100, 2)}}</span></p>
-                                                <button type="button" class="center-block btn btn-link" v-on:click="agregar_carrito({{$refaccion}})">Agregar al carrito</button>
+                                                <p class="text-center">{{$refaccion->name}} - {{ $refaccion->description }} <!--- <span style="color: #2566B4; font-weight: bold">${{number_format($refaccion->getOriginal('price')/100, 2)}}</span></p>-->
+                                                <!--<button type="button" class="center-block btn btn-link" v-on:click="agregar_carrito({{$refaccion}})">Agregar al carrito</button>-->
                                             </div>
                                             @endforeach
                                         </div>
