@@ -70,7 +70,7 @@ class PageController extends Controller
             return $validator->getMessageBag()->toArray();
         }
 
-        Mail::to($request->email)->send(new ContactoMail($request->all()));
+        Mail::to('kuamatzin@gmail.com')->send(new ContactoMail($request->all()));
 
         return "Exito";
     }
