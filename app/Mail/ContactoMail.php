@@ -26,13 +26,13 @@ class ContactoMail extends Mailable
      */
     public function __construct($datos)
     {
-        $this->name = $datos['name'];
-        $this->email = $datos['email'];
-        $this->contact_message = $datos['message'];
-        $this->corp_name = $datos['corp_name'];
-        $this->state = $datos['state'];
-        $this->city = $datos['city'];
-        $this->phone = $datos['phone'];
+        $this->name = htmlentities($datos['name']);
+        $this->email = htmlentities($datos['email']);
+        $this->contact_message = htmlentities($datos['message']);
+        $this->corp_name = htmlentities($datos['corp_name']);
+        $this->state = htmlentities($datos['state']);
+        $this->city = htmlentities($datos['city']);
+        $this->phone = htmlentities($datos['phone']);
     }
 
     /**
